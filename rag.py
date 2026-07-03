@@ -1,23 +1,4 @@
-"""
-rag.py — Retrieval-Augmented Generation engine
-  0. Fast path  — structured directory-entry lookup (e.g. "FRRO Chennai
-     phone number") answered straight from chunks.json via fuzzy match,
-     bypassing embedding/FAISS/reranking/LLM entirely. Falls through to
-     the normal pipeline below if nothing matches confidently.
-  0b. Answer cache — exact-repeat queries return the previously computed
-     answer instantly. Cache is cleared whenever the index is reloaded.
-  1. Query embedding  (BAAI/bge-m3, with LRU cache)
-  2. FAISS top-K retrieval
-  3. Adaptive re-ranking  (bge-reranker-v2-m3 — 4× faster than large)
-     skipped when top retrieval score is already very high
-  4. Prompt assembly  (no source/page metadata leaked into the prompt)
-  5. Qwen3 via Ollama  (kept warm via keep_alive, streaming → SSE, async chat logging)
-  6. Post-processing   (strip any stray citation artifacts, log response time)
 
-All heavy models (embedder, reranker, Ollama) are pre-loaded once via
-warmup() so the FIRST real user query doesn't pay a multi-second cold-start
-cost — call rag.warmup() once at app startup.
-"""
 
 import os
 import re
@@ -27,7 +8,7 @@ import logging
 import datetime
 import threading
 from functools import lru_cache
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple
 
 import numpy as np
 
@@ -140,6 +121,93 @@ def embed_query(query: str) -> np.ndarray:
 # Load on import — must be after _embed_query is defined (cache_clear reference)
 load_index()
 
+# ─── Directory entry formatting (fast-path output) ────────────────────────────
+# The fast path returns raw chunk text by design (zero LLM cost), but raw
+# chunk text still has PyMuPDF artifacts in it: a leading "6. Chennai"
+# header, "o" bullet markers PyMuPDF leaves behind, inconsistent spacing.
+# This turns that into clean, bold-headed bullets WITHOUT touching the
+# underlying data or going anywhere near the LLM — same field values,
+# same accuracy, just legible formatting.
+
+# A light emoji per recognised field — purely cosmetic, never affects
+# matching/parsing logic, which still lives in ingest._parse_entry_fields.
+_FIELD_EMOJI = {
+    "in-charge": "👤",
+    "officer in charge": "👤",
+    "designation": "🧾",
+    "contact person": "👤",
+    "address": "📍",
+    "phone": "📞",
+    "telephone": "📞",
+    "fax": "📠",
+    "email": "✉️",
+    "e-mail": "✉️",
+    "contact": "📞",
+}
+
+# Canonical display label per parsed field key (ingest.py lower-cases and
+# normalises labels like "in-charge" / "officer-in-charge" / "e-mail").
+_FIELD_DISPLAY = {
+    "in-charge": "In-Charge",
+    "officer in charge": "Officer-in-Charge",
+    "designation": "Designation",
+    "contact person": "Contact Person",
+    "address": "Address",
+    "phone": "Phone",
+    "telephone": "Telephone",
+    "fax": "Fax",
+    "email": "Email",
+    "e-mail": "Email",
+    "contact": "Contact",
+}
+
+def format_directory_entry(chunk: Dict) -> str:
+    """
+    Re-parses a directory_entry chunk's raw text with the SAME field
+    parser used at ingest/query time (ingest._parse_entry_fields), then
+    renders it as clean markdown bullets:
+
+        📍 **Address:** ...
+        📞 **Phone:** ...
+        ✉️ **Email:** ...
+
+    Falls back to the raw chunk text untouched if parsing finds nothing
+    (e.g. a non-directory chunk slipped through) — this is a pure
+    presentation layer, never a source of fabricated content.
+    """
+    fields = ingest._parse_entry_fields(chunk.get("text", ""))
+    if not fields:
+        return chunk.get("text", "").strip()
+
+    location = chunk.get("location_name", "").strip()
+    lines = []
+    if location:
+        lines.append(f"📍 **{location}**")
+
+    for key, value in fields.items():
+        if not value:
+            continue
+        emoji = _FIELD_EMOJI.get(key, "•")
+        label = _FIELD_DISPLAY.get(key, key.title())
+        lines.append(f"{emoji} **{label}:** {value}")
+
+    # "  \n" = markdown hard line-break (two trailing spaces + newline).
+    # A bare "\n" gets collapsed into a single space by most markdown
+    # renderers (and plain terminals), which is why fields were showing
+    # up run-together on one line instead of stacked.
+    return "  \n".join(lines) if lines else chunk.get("text", "").strip()
+
+
+def format_single_field(field: str, value: str) -> str:
+    """
+    Formats a single-field fast-path answer (e.g. user only asked for the
+    phone number) with the same emoji/bold convention as the full entry,
+    so a one-line answer still looks consistent with a full lookup.
+    """
+    emoji = _FIELD_EMOJI.get(field, "•")
+    label = _FIELD_DISPLAY.get(field, field.title())
+    return f"{emoji} **{label}:** {value}"
+
 # ─── Fast path: structured directory lookup ──────────────────────────────────
 # Reuses ingest.py's query_location() — the SAME fuzzy matcher and field
 # parser used everywhere else — so "FRRO Chennai phone number" or "Cochin
@@ -167,19 +235,18 @@ def try_fast_path(query: str) -> Optional[Dict]:
 
     if result.get("field"):
         source_chunk = result["chunk"]
-        answer_text  = result["answer"]
+        raw_answer   = result["answer"]
+        if not raw_answer or not raw_answer.strip():
+            return None
+        answer_text = format_single_field(result["field"], raw_answer.strip())
     else:
         # A location matched but no specific field was asked for — hand
-        # back the whole entry rather than guessing which field they want.
+        # back the whole entry, cleanly formatted, rather than guessing
+        # which field they want.
         source_chunk = result["chunks"][0]
-        answer_text  = source_chunk["text"]
-
-    # Safety guard: a matched-but-empty field is a sign the parser found
-    # the location but not a clean value for it. Returning blank text would
-    # be a quality regression — fall through to the full RAG pipeline
-    # instead, which can still reason about the surrounding chunk text.
-    if not answer_text or not answer_text.strip():
-        return None
+        answer_text  = format_directory_entry(source_chunk)
+        if not answer_text or not answer_text.strip():
+            return None
 
     return {
         "answer": answer_text,
@@ -190,6 +257,159 @@ def try_fast_path(query: str) -> Optional[Dict]:
             "score":   1.0,
             "snippet": source_chunk["text"][:200],
         }],
+        "fast_path": True,
+    }
+
+# ─── Document-level meta-query routing ───────────────────────────────────────
+# "Summarize this document" / "main topics" / "list tables" / "page N" are
+# document-level questions. Semantic top-K retrieval against the literal
+# query text returns near-random chunks for these (there's no passage in a
+# PDF that's semantically "about" the word "summarize"), which is why a
+# capable model like Qwen3 could sometimes bluff a plausible answer from
+# garbage context, but a small model like Qwen2.5:3B just fails openly
+# (echoes the question, or answers something unrelated). This layer
+# detects the intent and builds context directly from chunk metadata
+# instead of going anywhere near FAISS — more accurate AND faster, since
+# it skips embedding + retrieval + reranking entirely for these four
+# always-available questions.
+
+_PAGE_RE    = re.compile(r"\bpage\s+(\d+)\b", re.I)
+_TABLES_RE  = re.compile(r"\b(list|show|what).{0,15}\btables?\b", re.I)
+_TOPICS_RE  = re.compile(r"\b(main|key)\s+topics?\b|\bwhat.{0,15}\b(cover|about)\b", re.I)
+_SUMMARY_RE = re.compile(r"\bsummar(y|ize|ise)\b|\btl;?dr\b|\boverview\b", re.I)
+
+def detect_doc_intent(query: str) -> Tuple[Optional[str], Optional[int]]:
+    m = _PAGE_RE.search(query)
+    if m:
+        return "page", int(m.group(1))
+    if _TABLES_RE.search(query):
+        return "tables", None
+    if _TOPICS_RE.search(query):
+        return "topics", None
+    if _SUMMARY_RE.search(query):
+        return "summary", None
+    return None, None
+
+def _active_pdf() -> Optional[str]:
+    """
+    Most recently ingested PDF — used when a doc-level query doesn't name
+    a specific file. Generalises to any number of ingested PDFs without
+    hardcoding a filename anywhere.
+    """
+    return _chunks[-1]["pdf"] if _chunks else None
+
+def _page_chunks(pdf: str, page: int) -> List[Dict]:
+    return [c for c in _chunks if c.get("pdf") == pdf and c.get("page") == page]
+
+def _table_chunks(pdf: str) -> List[Dict]:
+    return [c for c in _chunks if c.get("pdf") == pdf and c.get("source") == "docling_table"]
+
+def _overview_sample(pdf: str, max_chars: int = 3500) -> str:
+    """
+    Builds a representative cross-section of the WHOLE document — one
+    chunk sampled per page, in page order, truncated to fit the context
+    budget — instead of a semantic top-K slice. This is what makes
+    "summarize" and "main topics" actually cover the document instead of
+    3 arbitrary paragraphs that happened to score highest against the
+    literal word "summarize".
+    """
+    by_page: Dict[int, Dict] = {}
+    for c in _chunks:
+        if c.get("pdf") != pdf:
+            continue
+        by_page.setdefault(c.get("page", 0), c)   # first chunk seen per page
+    pieces, total = [], 0
+    for page in sorted(by_page):
+        text = by_page[page]["text"].strip()
+        if not text:
+            continue
+        piece = f"[Page {page}] {text[:400]}"
+        if total + len(piece) > max_chars:
+            break
+        pieces.append(piece)
+        total += len(piece)
+    return "\n\n".join(pieces)
+
+def handle_doc_intent(query: str) -> Optional[Dict]:
+    """
+    Returns a complete result dict (same shape as try_fast_path) if this
+    query is a document-level meta-query AND we have chunks to answer it
+    from. Returns None otherwise, so the caller falls through to normal
+    retrieval for everything else.
+    """
+    intent, arg = detect_doc_intent(query)
+    if intent is None:
+        return None
+    pdf = _active_pdf()
+    if pdf is None:
+        return None
+
+    if intent == "page":
+        chunks = _page_chunks(pdf, arg)
+        if not chunks:
+            return {
+                "answer": f"I couldn't find page {arg} in the uploaded PDF.",
+                "sources": [],
+                "fast_path": True,
+            }
+        context = "\n\n".join(c["text"] for c in chunks)
+        prompt = (
+            f"{SYSTEM_PROMPT}\n\nCONTEXT:\n{context}"
+            f"\n\nQUESTION:\nWhat does this page say? Summarize it clearly.\n\nANSWER:"
+        )
+        source_chunks = chunks
+
+    elif intent == "tables":
+        chunks = _table_chunks(pdf)
+        if not chunks:
+            return {
+                "answer": "I couldn't find any tables in the uploaded PDF.",
+                "sources": [],
+                "fast_path": True,
+            }
+        # Tables are already clean markdown from Docling — no LLM call
+        # needed at all, so this branch is effectively instant.
+        answer_text = "\n\n".join(c["text"] for c in chunks)
+        return {
+            "answer": answer_text,
+            "sources": [{
+                "pdf": c.get("pdf", ""), "page": c.get("page", ""),
+                "source": c.get("source", ""), "score": 1.0,
+                "snippet": c["text"][:200],
+            } for c in chunks],
+            "fast_path": True,
+        }
+
+    else:  # "summary" or "topics"
+        context = _overview_sample(pdf)
+        if not context:
+            return None
+        question = (
+            "Summarize this document in a few clear paragraphs."
+            if intent == "summary" else
+            "What are the main topics covered in this document? List them clearly."
+        )
+        prompt = (
+            f"{SYSTEM_PROMPT}\n\nCONTEXT (excerpts spanning the full document):\n{context}"
+            f"\n\nQUESTION:\n{question}\n\nANSWER:"
+        )
+        source_chunks = [c for c in _chunks if c.get("pdf") == pdf][:5]
+
+    # Meta-queries need more room than a normal 3-chunk answer (a full-page
+    # or full-document context is bigger than 3×512 chars), so they get a
+    # larger context/output budget for this one call only.
+    response = call_ollama(
+        prompt,
+        num_ctx=config.DOC_META_NUM_CTX,
+        num_predict=config.DOC_META_NUM_PREDICT,
+    )
+    return {
+        "answer": response,
+        "sources": [{
+            "pdf": c.get("pdf", ""), "page": c.get("page", ""),
+            "source": c.get("source", ""), "score": 1.0,
+            "snippet": c["text"][:200],
+        } for c in source_chunks],
         "fast_path": True,
     }
 
@@ -245,10 +465,16 @@ def rerank(query: str, candidates: List[Dict],
         return ranked[:top_k]
     except Exception as e:
         logger.warning(f"Re-ranking failed ({e}); using retrieval order.")
+        for c in candidates:
+            c.setdefault("rerank_score", c.get("retrieval_score", 0.0))
         return candidates[:top_k]
 
 # ─── Prompt Builder ───────────────────────────────────────────────────────────
-# Conversational tone, no citation instructions, key terms highlighted in bold.
+# Conversational tone, no citation instructions, key terms highlighted in bold,
+# light emoji use for scannability, bullet formatting for multi-field answers
+# (mirrors the fast-path formatter above so directory-style answers look
+# consistent whether they came from the fast path or the LLM). Still accurate
+# and professional — friendliness never overrides correctness.
 # NOTE: source/page/pdf metadata is intentionally NOT included in the prompt
 # text below — the model can only cite what it can see, so keeping that
 # metadata out of its context is the most reliable way to stop it from
@@ -259,8 +485,9 @@ SYSTEM_PROMPT = (
     "with the user about their documents.\n\n"
     "Rules:\n"
     "- Answer using only the information in the CONTEXT below.\n"
-    "- If the answer isn't in the context, say so naturally, e.g. "
-    "\"I couldn't find that in the documents you've shared.\"\n"
+    "- If the answer isn't in the context, say so naturally and warmly, e.g. "
+    "\"Hmm, I couldn't find that in the documents you've shared 🤔 — want to "
+    "try rephrasing, or ask about something else?\"\n"
     "- Write like you're explaining things to a colleague: clear, warm, and "
     "conversational — not robotic, and never mention \"the context\" itself.\n"
     "- Never mention page numbers, source numbers, or which file a fact came "
@@ -268,9 +495,33 @@ SYSTEM_PROMPT = (
     "- Bold the key terms, names, numbers, and important keywords using "
     "**markdown bold** so the most important parts of your answer stand out "
     "at a glance.\n"
-    "- Keep it concise but complete — get to the point without padding.\n"
-    "- For tables or lists, format them clearly.\n"
-    "- Never make anything up or add information that isn't in the context."
+    "- Use 1-3 relevant emojis where they naturally fit (e.g. 📍 for "
+    "locations/addresses, 📞 for phone numbers, ✉️ for email, 👤 for a "
+    "person/role, 📠 for fax, ✅ for confirmations) — never force them in, "
+    "and never use more than one emoji per line.\n"
+    "- If an answer has MULTIPLE fields or details (e.g. a contact entry "
+    "with an in-charge, address, phone, and email), NEVER write it as one "
+    "paragraph or a numbered narrative. Instead, put each field on its own "
+    "bullet line with a bold label, like:\n"
+    "  📍 **Address:** ...\n"
+    "  📞 **Phone:** ...\n"
+    "  ✉️ **Email:** ...\n"
+    "- If the answer involves steps or a process, use a numbered list so "
+    "it's easy to follow.\n"
+    "- Keep it concise but complete — get to the point without padding, "
+    "filler intros, or restating the question.\n"
+    "- If the answer has multiple points, items, or steps — even 5 or "
+    "more — include ALL of them completely. Never skip, hide, or "
+    "shorten any point unless the user explicitly asks for a shorter "
+    "version.\n"
+    "- Display each point separately and clearly, with proper spacing "
+    "and line breaks between them so the answer is easy to scan.\n"
+    "- Every point must be meaningful and complete on its own — no "
+    "vague or half-finished items.\n"
+    "- For tables, format them clearly with markdown tables.\n"
+    "- Stay professional and accurate at all times — friendliness, emojis, "
+    "and formatting should never come at the cost of correctness. Never "
+    "make anything up or add information that isn't in the context."
 )
 
 def build_prompt(query: str, context_chunks: List[Dict]) -> str:
@@ -305,14 +556,42 @@ def strip_citations(text: str) -> str:
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     return cleaned.strip()
 
-# ─── LLM (Qwen3 via Ollama) — streaming ──────────────────────────────────────
+# ─── LLM (Qwen via Ollama) — streaming ───────────────────────────────────────
 # keep_alive keeps the model loaded in memory between requests so it doesn't
 # have to be reloaded from disk on every query — this is usually the single
 # biggest win for perceived response time on a local Ollama setup.
+#
+# num_ctx / num_predict are optional per-call overrides: normal retrieval
+# answers use config.OLLAMA_NUM_CTX / config.OLLAMA_NUM_PREDICT, but
+# document-meta answers (summarize / topics / whole-page) legitimately
+# need a bigger context and output budget, so handle_doc_intent() passes
+# config.DOC_META_NUM_CTX / config.DOC_META_NUM_PREDICT explicitly for
+# that one call instead of raising the defaults for every query.
 
-_OLLAMA_KEEP_ALIVE = os.environ.get("OLLAMA_KEEP_ALIVE", "30m")
+def _resolve_keep_alive():
+    """
+    os.environ.get() always returns a string even for a non-string
+    default, and Ollama's keep_alive rejects a bare numeric string like
+    "-1" (needs a unit, e.g. "-1s", or to be an actual int/float) — that
+    mismatch is what caused 'missing unit in duration "-1"'. This coerces
+    any plain integer-looking string (from the env var or config) back to
+    a real int before it ever reaches the ollama client, and only falls
+    back to passing the raw string through for genuine duration strings
+    like "30m".
+    """
+    raw = os.environ.get("OLLAMA_KEEP_ALIVE", config.OLLAMA_KEEP_ALIVE)
+    if isinstance(raw, (int, float)):
+        return raw
+    raw = str(raw).strip()
+    try:
+        return int(raw)
+    except ValueError:
+        return raw   # e.g. "30m" — a real Go duration string, pass through as-is
 
-def stream_ollama(prompt: str):
+_OLLAMA_KEEP_ALIVE = _resolve_keep_alive()
+
+def stream_ollama(prompt: str, num_ctx: Optional[int] = None,
+                   num_predict: Optional[int] = None):
     """
     Generator that yields raw text tokens from Ollama as they arrive.
     """
@@ -324,16 +603,20 @@ def stream_ollama(prompt: str):
             stream=True,
             keep_alive=_OLLAMA_KEEP_ALIVE,
             options={
-                "temperature": 0.1,
+                # Was hardcoded to 0.1 regardless of config — config.py's
+                # OLLAMA_TEMPERATURE was defined but silently never read.
+                # Lower temperature matters more on a 3B model: it hallucinates
+                # and drifts off-context more readily than a larger model at
+                # the same setting.
+                "temperature": config.OLLAMA_TEMPERATURE,
                 "top_p":       0.9,
                 # Smaller context window than the previous 4096 default —
                 # less attention compute per token = faster prefill on
-                # every request. Raise via config if you see truncation.
-                "num_ctx":     config.OLLAMA_NUM_CTX,
+                # every request. Overridable per-call for doc-meta answers.
+                "num_ctx":     num_ctx or config.OLLAMA_NUM_CTX,
                 # Hard cap on generated tokens so a single verbose answer
-                # can't dominate response time. Raise if answers are
-                # getting cut off for your content.
-                "num_predict": config.OLLAMA_NUM_PREDICT,
+                # can't dominate response time. Overridable per-call.
+                "num_predict": num_predict or config.OLLAMA_NUM_PREDICT,
             }
         ):
             token = chunk.get("response", "")
@@ -346,7 +629,8 @@ def stream_ollama(prompt: str):
 
 _SENTENCE_END = re.compile(r"([.!?])(\s+)")
 
-def stream_ollama_clean(prompt: str):
+def stream_ollama_clean(prompt: str, num_ctx: Optional[int] = None,
+                         num_predict: Optional[int] = None):
     """
     Wraps stream_ollama: buffers tokens into sentence-sized chunks so that
     strip_citations() can see a whole phrase before it's sent to the client.
@@ -367,7 +651,7 @@ def stream_ollama_clean(prompt: str):
         buffer = buffer[end:]
         continue
 
-    for token in stream_ollama(prompt):
+    for token in stream_ollama(prompt, num_ctx=num_ctx, num_predict=num_predict):
         buffer += token
         while True:
             match = _SENTENCE_END.search(buffer)
@@ -385,9 +669,10 @@ def stream_ollama_clean(prompt: str):
         if cleaned:
             yield cleaned
 
-def call_ollama(prompt: str) -> str:
+def call_ollama(prompt: str, num_ctx: Optional[int] = None,
+                 num_predict: Optional[int] = None) -> str:
     """Blocking call — collects the full streamed response, then sanitizes it."""
-    raw = "".join(stream_ollama(prompt))
+    raw = "".join(stream_ollama(prompt, num_ctx=num_ctx, num_predict=num_predict))
     return strip_citations(raw)
 
 # ─── Warmup ───────────────────────────────────────────────────────────────────
@@ -450,7 +735,8 @@ def log_chat(query: str, answer: str, sources: List[Dict], elapsed: float):
 
 def answer(query: str) -> Dict:
     """
-    Full pipeline: fast-path → cache → retrieve → rerank → generate → clean → log.
+    Full pipeline: fast-path → doc-meta → cache → retrieve → rerank →
+    relevance floor → generate → clean → log.
     Returns dict with 'answer', 'sources', 'elapsed'.
     """
     t0 = time.time()
@@ -470,6 +756,15 @@ def answer(query: str) -> Dict:
         fast["elapsed"] = elapsed
         return fast
 
+    # 0a. Document-level meta-query — "summarize", "main topics", "list
+    # tables", "page N". Bypasses FAISS; builds context from metadata.
+    doc_meta = handle_doc_intent(query)
+    if doc_meta:
+        elapsed = round(time.time() - t0, 4)
+        log_chat(query, doc_meta["answer"], [], elapsed)
+        doc_meta["elapsed"] = elapsed
+        return doc_meta
+
     # 0b. Exact-repeat question already answered before.
     cached = get_cached_answer(query)
     if cached:
@@ -480,13 +775,19 @@ def answer(query: str) -> Dict:
     candidates = retrieve(query, top_k=config.TOP_K_RETRIEVE)
     top_chunks = rerank(query, candidates, top_k=config.TOP_K_RERANK)
 
-    if not top_chunks:
+    # 3b. Relevance floor — if even the best chunk after reranking is a
+    # weak match, don't hand it to the LLM and hope. This is what stops a
+    # 3B model from confidently answering off irrelevant context instead
+    # of admitting it doesn't know.
+    if not top_chunks or top_chunks[0].get("rerank_score", 0.0) < config.MIN_RELEVANCE_SCORE:
         elapsed = round(time.time() - t0, 2)
-        return {
-            "answer":  "No relevant passages found for your query.",
+        result = {
+            "answer":  "I couldn't find that information in the uploaded PDF.",
             "sources": [],
             "elapsed": elapsed
         }
+        log_chat(query, result["answer"], [], elapsed)
+        return result
 
     prompt   = build_prompt(query, top_chunks)
     response = call_ollama(prompt)   # already cleaned of citation artifacts
@@ -519,7 +820,8 @@ def answer_stream(query: str):
       Yields JSON lines:  {"token": "..."}
       Final line:         {"done": true, "sources": [...], "elapsed": X}
     Tokens are pre-cleaned of citation artifacts via stream_ollama_clean().
-    Fast-path and cache hits skip straight to a single token + done event.
+    Fast-path, doc-meta, and cache hits skip straight to a single token +
+    done event.
     """
     t0 = time.time()
 
@@ -537,6 +839,15 @@ def answer_stream(query: str):
                            "elapsed": elapsed, "fast_path": True})
         return
 
+    doc_meta = handle_doc_intent(query)
+    if doc_meta:
+        elapsed = round(time.time() - t0, 4)
+        log_chat(query, doc_meta["answer"], [], elapsed)
+        yield json.dumps({"token": doc_meta["answer"]})
+        yield json.dumps({"done": True, "sources": doc_meta["sources"],
+                           "elapsed": elapsed, "fast_path": True})
+        return
+
     cached = get_cached_answer(query)
     if cached:
         elapsed = round(time.time() - t0, 4)
@@ -548,9 +859,11 @@ def answer_stream(query: str):
     candidates = retrieve(query, top_k=config.TOP_K_RETRIEVE)
     top_chunks = rerank(query, candidates, top_k=config.TOP_K_RERANK)
 
-    if not top_chunks:
+    if not top_chunks or top_chunks[0].get("rerank_score", 0.0) < config.MIN_RELEVANCE_SCORE:
         elapsed = round(time.time() - t0, 2)
-        yield json.dumps({"token": "No relevant passages found for your query."})
+        msg = "I couldn't find that information in the uploaded PDF."
+        log_chat(query, msg, [], elapsed)
+        yield json.dumps({"token": msg})
         yield json.dumps({"done": True, "sources": [], "elapsed": elapsed})
         return
 

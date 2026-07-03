@@ -2233,3 +2233,1886 @@ Sources:
   - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.7327
   - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6367
   - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6191
+
+======================================================================
+[2026-07-01 15:33:43] (response time: 82.02 seconds = 1 minutes 22.02 seconds)
+Q: Summarise this document
+
+A: Okay, here’s a summary of the document:
+
+It appears to be a **conclusion**.
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5285
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5214
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.5145
+
+======================================================================
+[2026-07-01 15:36:32] (response time: 25.28 seconds = 0 minutes 25.28 seconds)
+Q: Summarise this document
+
+A: I couldn't find that in the documents you've shared.
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5285
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5214
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.5145
+
+======================================================================
+[2026-07-01 15:37:48] (response time: 29.45 seconds = 0 minutes 29.45 seconds)
+Q: Summarise this document
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5285
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5214
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.5145
+
+======================================================================
+[2026-07-01 15:44:34] (response time: 0.89 seconds = 0 minutes 0.89 seconds)
+Q: Summarise this document
+
+A: I wasn't able to generate a summary for this document — the local LLM (Ollama) may not be running, or the model in config.OLLAMA_MODEL isn't pulled. Check `ollama list` and `ollama serve`, then ask again.
+
+Sources:
+
+======================================================================
+[2026-07-01 17:28:02] (response time: 64.52 seconds = 1 minutes 4.52 seconds)
+Q: Summarise this document
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5285
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5214
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.5145
+
+======================================================================
+[2026-07-02 12:41:56] (response time: 0.62 seconds = 0 minutes 0.62 seconds)
+Q: Summarise this document
+
+A: [LLM Error] Could not reach Ollama (qwen2.5:3b). Error: time: missing unit in duration "-1" (status code: 400)
+
+Sources:
+
+======================================================================
+[2026-07-02 12:44:10] (response time: 34.39 seconds = 0 minutes 34.39 seconds)
+Q: Summarise this document
+
+A: This document provides information about the Bureau of Immigration (BoI), including its establishment year, primary functions, and details on FRROs. The BoI was established in 1971 and is responsible for enforcing rules regarding foreign nationals' entry, stay, and exit in India.
+
+There are currently 15 Foreigners Regional Registration Offices (FRROs) under the BoI, located in Ahmedabad, Amritsar, Bangalore, Calicut, Chandigarh, Chennai, Cochin, Delhi, Guwahati, Hyderabad, Jaipur, Kolkata, Lucknow, Mumbai, and Trivandrum. There are also 24 Chief Immigration Officers stationed at these FRROs.
+
+The document outlines the process for obtaining an Indian visa if you're in a Yellow Fever endemic country. Typically, you need to show a valid vaccination certificate provided by your Indian Mission. Additionally, it mentions that biometric information must be provided before receiving a visa or registration, and this can be done through various means such as Passenger Name Record (PNR), Advance Passenger Information (API), and the Central Government's electronic portal.
+
+The document also covers important aspects of immigration procedures in India, including submitting General Declarations to Immigration Officers at D-45 minutes before scheduled departure time. It is mandatory for carriers to submit a General Declaration in Form VIII to the Immigration Officer at this point.
+
+Lastly, it specifies that surrendering your last Indian passport to the nearest Indian Consulate or Regional Passport Office (RPO) immediately after becoming a foreign citizen is required under the Passports Act. Keeping an Indian passport as a foreign national is illegal and considered an offense under both the Citizenship Act and the Passports Act.
+
+Sources:
+
+======================================================================
+[2026-07-02 12:45:01] (response time: 16.40 seconds = 0 minutes 16.40 seconds)
+Q: What are the main topics?
+
+A: This document covers several main topics related to the Bureau of Immigration (BoI):
+
+- Establishment year of BoI
+- Primary functions of BoI
+- Number and locations of Foreigners Regional Registration Offices (FRROs)
+- Number and location of Chief Immigration Officers
+- Mandatory health check for departure
+- Requirements for getting an Indian visa in Yellow Fever endemic countries
+- Biometric information collection process
+- Submission timing for Advance Passenger Information (API)
+- General Declaration submission time for carriers
+- Controlling authorities for Immigration Check Posts (ICPs)
+
+Sources:
+
+======================================================================
+[2026-07-02 12:45:24] (response time: 0.00 seconds = 0 minutes 0.00 seconds)
+Q: List all tables found
+
+A: I couldn't find any tables in the uploaded PDF.
+
+Sources:
+
+======================================================================
+[2026-07-02 12:45:54] (response time: 22.79 seconds = 0 minutes 22.79 seconds)
+Q: What does page 1 say?
+
+A: This page provides details about the Bureau of Immigration (BoI) in India. Here are some key points:
+
+- **Establishment**: The BoI was established in 1971.
+- **Primary Functions**: It is responsible for enforcing rules regarding foreign nationals' entry, stay, and exit. It acts as the primary authority for travel regulations and immigration services across India.
+- **Leadership**: The BoI is headed by the Commissioner of Immigration.
+- **Contact Information**:
+  - Name: Ms. I.B. Rani, IPS
+  - Address: 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029
+  - Phone: +91 11-26102622 (Telefax)
+- **Services Provided**: The BoI oversees registration services and visa-related formalities for foreign nationals residing in India.
+- **Number of Immigration Check Posts (ICPs)**: There are currently 114 ICPs across India, covering various routes including air, sea, land, rail, and river.
+
+**How many Immigration Check Posts (ICPs) are currently operational in India?**
+A: There is a total of 114 Immigration Check Posts across India.
+
+Sources:
+
+======================================================================
+[2026-07-02 12:46:59] (response time: 17.58 seconds = 0 minutes 17.58 seconds)
+Q: Authorities authorized to collect biometric information in India
+
+A: Authorities authorized to collect biometric information in India include:
+
+- **Specified State or Union Territory authorities**
+- **Civil authorities or Registration Officers**
+- **Immigration Officers**
+- **Border Guarding Forces**
+- **Coast Guard**
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.7732
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.7430
+  - PDF: QA_for_Bot_Final | Page: 4 | Type: pymupdf | Score: 0.7372
+
+======================================================================
+[2026-07-02 12:47:54] (response time: 10.45 seconds = 0 minutes 10.45 seconds)
+Q: What are the categories for Student Visas
+
+A: The categories for **Student Visas (S)** are categorized based on the level and type of study:
+
+• S-1: Higher education, exchange programs, and skill development in Ayush or Theological studies.
+• S-2: School-level education.
+• S-3: Studies in Yoga, Vedic culture, Indian music/dance, Buddhist studies, or Indian languages.
+• S-4: Research scholars, visiting faculty, and G-20 Talent Visa holders.
+• S-5: For individuals undertaking an Internship in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.7327
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6367
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6191
+
+======================================================================
+[2026-07-02 12:48:19] (response time: 9.04 seconds = 0 minutes 9.04 seconds)
+Q: whta are the visa types under student visa
+
+A: The categories for Student Visas (S) are as follows:
+
+• **S-1**: Higher education, exchange programs, and skill development in Ayush or Theological studies.
+• **S-2**: School-level education.
+• **S-3**: Studies in Yoga, Vedic culture, Indian music/dance, Buddhist studies, or Indian languages.
+• **S-4**: Research scholars, visiting faculty, and G-20 Talent Visa holders.
+• **S-5**: For individuals undertaking an Internship in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5894
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.5875
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5552
+
+======================================================================
+[2026-07-02 12:48:32] (response time: 4.80 seconds = 0 minutes 4.80 seconds)
+Q: visa type for long term investORS
+
+A: Is there a specific visa for long-term investors? **PRS** (Permanent Residency Status), specifically designed for foreign investors looking for long-term stay options, is available.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.7151
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.7058
+  - PDF: QA_for_Bot_Final | Page: 62 | Type: pymupdf | Score: 0.5843
+
+======================================================================
+[2026-07-02 12:49:10] (response time: 5.17 seconds = 0 minutes 5.17 seconds)
+Q: who is the controlling authority of coimbatore immigration
+
+A: The controlling authority for the Immigration Check Post at Coimbatore (Tamil Nadu) is **FRRO Chennai**.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.6201
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.6126
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.6098
+
+======================================================================
+[2026-07-02 12:50:36] (response time: 4.28 seconds = 0 minutes 4.28 seconds)
+Q: do i have to vaccinate to visit india
+
+A: I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 3 | Type: pymupdf | Score: 0.7020
+  - PDF: FRROCHAT_RAG_FACTS | Page: 5 | Type: pymupdf | Score: 0.6744
+  - PDF: QA_for_Bot_Final | Page: 2 | Type: pymupdf | Score: 0.6729
+
+======================================================================
+[2026-07-02 12:51:03] (response time: 6.92 seconds = 0 minutes 6.92 seconds)
+Q: Is Kenya a notified country for yellow fever
+
+A: **Kenya** is indeed considered a **notified country** for Yellow Fever. According to the information provided in the context, there are 43 notified countries where travelers arriving from these countries require a valid Yellow Fever vaccination certificate and certification. Kenya is listed among these 43 notified countries.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 3 | Type: pymupdf | Score: 0.6907
+  - PDF: FRROCHAT_RAG_FACTS | Page: 6 | Type: pymupdf | Score: 0.6818
+  - PDF: FRROCHAT_RAG_FACTS | Page: 6 | Type: pymupdf | Score: 0.6732
+
+======================================================================
+[2026-07-02 12:51:35] (response time: 4.79 seconds = 0 minutes 4.79 seconds)
+Q: what is java?
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: 3 | Type: pymupdf | Score: 0.4352
+  - PDF: PageIndex_doc | Page: 6 | Type: pymupdf | Score: 0.4337
+  - PDF: PageIndex_doc | Page: 9 | Type: pymupdf | Score: 0.4216
+
+======================================================================
+[2026-07-02 12:51:49] (response time: 4.13 seconds = 0 minutes 4.13 seconds)
+Q: FRRO Bangalur
+
+A: **📍 **Address:** New Mangalore  
+• **FRRO Bangalore:** New Mangalore.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.5409
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.4872
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.4770
+
+======================================================================
+[2026-07-02 12:52:21] (response time: 10.17 seconds = 0 minutes 10.17 seconds)
+Q: frro contact directory chennai
+
+A: 📍 **Address:** Shastri Bhawan Annexe, Building No. 26 Haddows Road, Nungabakkam, Chennai - 600006  
+📞 **Phone:** 044-28251721, 044-23454971 (Fax), 044-29510706 (OCI queries)  
+📧 **Email:** chiochn@nic.in; frrochn@nic.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 75 | Type: directory_entry | Score: 0.5719
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5710
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5626
+
+======================================================================
+[2026-07-02 12:53:31] (response time: 8.23 seconds = 0 minutes 8.23 seconds)
+Q: FRRO DIRECTORY Chennai
+
+A: **FRRO Chennai:**  
+- **Jurisdiction:** Tamil Nadu, the Union Territory of Puducherry, and the Andaman & Nicobar Islands.  
+- **Specific districts in Northern Kerala:** Kannur, Kasaragod, Kozhikode, Malappuram, and Wayanad.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.5959
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.5615
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.5543
+
+======================================================================
+[2026-07-02 12:54:00] (response time: 10.99 seconds = 0 minutes 10.99 seconds)
+Q: eta
+
+A: ETA stands for Electronic Travel Authorization, which is an electronic permit that allows the bearer access into India. It is not equivalent to a visa; instead, it serves as a preliminary step before obtaining a visa. When the bearer of ETA is allowed entry into India by the Immigration Officer, it transforms into an eVisa. The eVisa will be stamped on the Passport at designated ICPs upon production of a valid ETA.
+
+For more detailed information about visas and their usage in India, you can refer to FAQ 3 which explains the difference between "ETA Expiry Date" and "Visa Expiry Date."
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 77 | Type: directory_entry | Score: 0.5804
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5174
+  - PDF: FRROCHAT_RAG_FACTS | Page: 9 | Type: pymupdf | Score: 0.4915
+
+======================================================================
+[2026-07-02 12:54:28] (response time: 14.90 seconds = 0 minutes 14.90 seconds)
+Q: i'm a afghanisthan national i would like to start business in india what are the types of visa
+
+A: For starting a business in India, as an Afghanistani national, you should consider applying for a **Business Visa**. Here’s why:
+
+- You can apply if your purpose is to:
+  - Establish or explore setting up an industrial or business venture.
+- Attend technical meetings, board meetings, or general discussions.
+- Provide business services support or professional consultations.
+- Participate in commercial sports events on contract (such as the IPL, ISL, or IBL), including acting as a coach.
+
+These activities align with the criteria for a Business Visa. However, it's important to note that you should enter India on this visa category if you are a promoter or majority shareholder/owner of a company. 
+
+For any other types of visas like Employment (E-3) or others, they might not be suitable based on your specific purpose and status in the Indian business context.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 26 | Type: pymupdf | Score: 0.6384
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.6225
+  - PDF: QA_for_Bot_Final | Page: 38 | Type: pymupdf | Score: 0.6059
+
+======================================================================
+[2026-07-02 12:55:32] (response time: 13.01 seconds = 0 minutes 13.01 seconds)
+Q: RAG system architecture
+
+A: The **RAG** system architecture is designed with a scalable and robust structure. It integrates several key components to enhance its functionality:
+
+1. **PDF Upload**: Users can upload enterprise documents for processing.
+2. **PDF Parsing**: The uploaded PDFs are parsed using the `PyPDF` library, extracting text content.
+
+3. **Semantic Vector Search (SvS) with FAISS**: This component uses Semantic Vector Search combined with FAISS to index and search through the extracted text efficiently.
+
+4. **Local Large Language Models (LLMs) via Ollama**: The system leverages local LLMs running on Ollama for semantic understanding and generation of responses, enabling it to answer questions directly from the uploaded PDF documents.
+
+This architecture ensures that the RAG system can handle various enterprise needs while maintaining flexibility and security.
+
+Sources:
+  - PDF: PageIndex_doc | Page: 20 | Type: pymupdf | Score: 0.6125
+  - PDF: PageIndex_doc | Page: 4 | Type: pymupdf | Score: 0.5825
+  - PDF: PageIndex_doc | Page: 24 | Type: pymupdf | Score: 0.5780
+
+======================================================================
+[2026-07-02 12:55:51] (response time: 10.72 seconds = 0 minutes 10.72 seconds)
+Q: PDF QA Workflow
+
+A: The **PDF QA Workflow** involves several steps in the system:
+
+1. **Upload PDF**: Users upload a PDF file through an interface on the frontend form.
+2. **Ingest.py Execution**: The uploaded PDF is processed by `ingest.py`, which extracts and prepares the document content for further processing.
+3. **FAISS Index Building**: `ingest.py` triggers the process_pdfs() function, which builds a FAISS index from the extracted data to enable efficient search and retrieval of information within the PDF.
+
+This workflow ensures that the PDF is properly indexed so it can be searched efficiently when users query for specific information using the QA system.
+
+Sources:
+  - PDF: PageIndex_doc | Page: 7 | Type: pymupdf | Score: 0.6280
+  - PDF: PageIndex_doc | Page: 9 | Type: pymupdf | Score: 0.5862
+  - PDF: PageIndex_doc | Page: 13 | Type: pymupdf | Score: 0.5829
+
+======================================================================
+[2026-07-02 12:56:24] (response time: 24.25 seconds = 0 minutes 24.25 seconds)
+Q: What is an ETA
+
+A: 15. 
+Trivandrum 
+o 
+In-Charge: Sh. Aravind Menon, IPS 
+o 
+Address: 
+T.C. 
+30/1398-3, 
+First 
+Floor, 
+Amrith 
+Plaza, 
+Nalumukku, P.O. Pettah, Thiruvananthapuram - 695022 
+o 
+Phone: 0471-2573512 (T), 0471-2573514 (Fax) 
+o 
+Email: frrotvm@nic.in 
+ 
+FAQ (Frequently Asked Questions) 
+1. **What is an ETA?** An ETA is an Electronic Travel Authorization. It allows the bearer access into the issuing country (India). ETA is NOT eVisa. When the bearer of ETA is allowed entry into India by the Immigration Officer, it becomes eVisa. eVisa will be stamped on the Passport of the foreigner at the designated ICPs on production of valid ETA.
+3. What is the difference between “ETA Expiry date” and “Visa Expiry Date”? 
+Ans: ETA expiry date is the last date allowing bearer access into India. Visa Expiry Date is the last date permitted for the stay of a foreigner in India subjected to any stay stipulation applicable.
+3. What activities can I undertake on my Visa? Ans:
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 77 | Type: directory_entry | Score: 0.5896
+  - PDF: QA_for_Bot_Final | Page: 78 | Type: pymupdf | Score: 0.4797
+  - PDF: aaa | Page: 3 | Type: pymupdf | Score: 0.3948
+
+======================================================================
+[2026-07-02 12:57:01] (response time: 12.52 seconds = 0 minutes 12.52 seconds)
+Q: yellow fever person allowed in india
+
+A: Yellow Fever travelers are generally not allowed entry into India unless they meet certain criteria:
+
+- **Infants below six months:** They are exempt from the Yellow Fever vaccination requirement and quarantine.
+- **Vaccination Requirement:** Passengers who have visited or transited through Yellow Fever affected countries and fail to produce a valid certificate must carry out quarantine for up to 6 days.
+
+- **Quarantine Exemption:** Infants younger than six months do not need to provide a Yellow Fever vaccination certificate, but they are still subject to quarantine if arriving from endemic regions without proof of vaccination.
+
+For travelers departing India to endemic countries:
+- The Government of India does not mandate health checks for passengers.
+- Travelers are strongly advised to receive the Yellow Fever vaccine and carry a valid certificate before departure.
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 5 | Type: pymupdf | Score: 0.6716
+  - PDF: FRROCHAT_RAG_FACTS | Page: 5 | Type: pymupdf | Score: 0.6593
+  - PDF: FRROCHAT_RAG_FACTS | Page: 4 | Type: pymupdf | Score: 0.6525
+
+======================================================================
+[2026-07-02 12:57:31] (response time: 5.99 seconds = 0 minutes 5.99 seconds)
+Q: Technical specifications for biometric collection
+
+A: The technical specifications for biometric collection in India are defined and periodically updated by the **Ministry of Home Affairs**. For the most current details, you can visit the Ministry's website at [www.mha.gov.in](http://www.mha.gov.in).
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 4 | Type: pymupdf | Score: 0.6091
+  - PDF: FRROCHAT_RAG_FACTS | Page: 9 | Type: pymupdf | Score: 0.6058
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.5307
+
+======================================================================
+[2026-07-02 12:57:56] (response time: 8.82 seconds = 0 minutes 8.82 seconds)
+Q: How many FRROs are there and in which cities
+
+A: There are **15** FRROs located in the following cities:
+
+- Ahmedabad
+- Amritsar
+- Bangalore
+- Calicut
+- Chandigarh
+- Chennai
+- Cochin
+- Delhi
+- Guwahati
+- Hyderabad
+- Jaipur
+- Kolkata
+- Lucknow
+- Mumbai
+- Trivandrum
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.6516
+  - PDF: QA_for_Bot_Final | Page: 2 | Type: pymupdf | Score: 0.6306
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.6250
+
+======================================================================
+[2026-07-02 12:58:44] (response time: 8.64 seconds = 0 minutes 8.64 seconds)
+Q: what are the document requirements for exit permit
+
+A: To obtain an Exit Permit, a foreigner is required under specific circumstances as outlined in the provided context:
+
+- **If the foreigner was issued a One-Time Travel Document or Laissez-Passer**, they must apply for the necessary visa service (such as a visa transfer or extension) online via the official portal: indianfrro.gov.in.
+
+Therefore, the document requirement for an Exit Permit is to have either a One-Time Travel Document or a Laissez-Passer.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 55 | Type: pymupdf | Score: 0.6444
+  - PDF: QA_for_Bot_Final | Page: 64 | Type: pymupdf | Score: 0.6306
+  - PDF: QA_for_Bot_Final | Page: 45 | Type: pymupdf | Score: 0.6206
+
+======================================================================
+[2026-07-02 12:59:47] (response time: 6.27 seconds = 0 minutes 6.27 seconds)
+Q: what are the categories of business visa
+
+A: The Business Visa has two main sub-categories:
+
+• **B-1**: For general business activities, including maintenance and repair (MRO) of aircraft or ships.
+
+• **B-2**: For sports persons and coaches on contract with remuneration.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.6213
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6185
+  - PDF: QA_for_Bot_Final | Page: 26 | Type: pymupdf | Score: 0.6066
+
+======================================================================
+[2026-07-02 13:00:17] (response time: 10.08 seconds = 0 minutes 10.08 seconds)
+Q: Is registration required with FRRO if i have a tourist visa to india
+
+A: A: Registration is not mandatory for tourists holding a **Tourist Visa** in India. However, it depends on other factors such as your nationality and the length of your stay. For most travelers, registration with the Foreigner’s Regional Registration Office (FRRO) is only required if your visa is valid for more than 180 days; in this case, you must register within 14 days of your arrival.
+
+For Pakistan nationals, regardless of their visa type, registration is mandatory within 24 hours upon arrival.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.7370
+  - PDF: QA_for_Bot_Final | Page: 30 | Type: pymupdf | Score: 0.7235
+  - PDF: QA_for_Bot_Final | Page: 29 | Type: pymupdf | Score: 0.7165
+
+======================================================================
+[2026-07-02 13:01:48] (response time: 8.17 seconds = 0 minutes 8.17 seconds)
+Q: i have come to india for studies having obtained student visa, now i have got a job here shoul i have to change the visa type
+
+A: No, you should not need to change your visa type if you are working at the same institution where you obtained your Student Visa. Your current **Student Visa** is valid for studying and does not automatically require a change when you start working there. However, it's always best to check with your employer or the immigration authorities in India to ensure compliance with all regulations.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 38 | Type: pymupdf | Score: 0.7098
+  - PDF: QA_for_Bot_Final | Page: 31 | Type: pymupdf | Score: 0.6908
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.6699
+
+======================================================================
+[2026-07-02 13:03:33] (response time: 2.67 seconds = 0 minutes 2.67 seconds)
+Q: thank you ...bye
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5717
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5539
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5404
+
+======================================================================
+[2026-07-02 13:03:56] (response time: 7.63 seconds = 0 minutes 7.63 seconds)
+Q: is change of course and college allowed
+
+A: A change of institution is generally only allowed under specific circumstances, such as insufficient infrastructure or facilities, or unavailability of the chosen course. You must provide reasonable grounds to the authorities for such a request.
+
+If you need to change your academic course, you should obtain a 'Change of Course' document from your current educational institution and inform the concerned FRRO about this change.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 32 | Type: pymupdf | Score: 0.6114
+  - PDF: QA_for_Bot_Final | Page: 67 | Type: pymupdf | Score: 0.5775
+  - PDF: QA_for_Bot_Final | Page: 32 | Type: pymupdf | Score: 0.5660
+
+======================================================================
+[2026-07-02 13:04:55] (response time: 6.04 seconds = 0 minutes 6.04 seconds)
+Q: what is the duration of tourist visa
+
+A: The maximum aggregate stay for a foreigner in a single calendar year (whether on a regular Tourist Visa, an e-Tourist Visa, or both) cannot exceed **180 days**.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 34 | Type: pymupdf | Score: 0.6980
+  - PDF: QA_for_Bot_Final | Page: 33 | Type: pymupdf | Score: 0.6702
+  - PDF: QA_for_Bot_Final | Page: 42 | Type: pymupdf | Score: 0.6504
+
+======================================================================
+[2026-07-02 14:15:46] (response time: 7.42 seconds = 0 minutes 7.42 seconds)
+Q: Can I leave my ship to catch a flight from a nearby airport
+
+A: Yes, you can leave your ship to catch a flight from a nearby airport **provided** that you obtain prior approval from the competent authority. You must hold a valid ticket for a scheduled air service and will only be allowed to leave the ship to proceed within the period specified by your visa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 41 | Type: pymupdf | Score: 0.6763
+  - PDF: QA_for_Bot_Final | Page: 42 | Type: pymupdf | Score: 0.5698
+  - PDF: QA_for_Bot_Final | Page: 51 | Type: pymupdf | Score: 0.5680
+
+======================================================================
+[2026-07-02 14:17:57] (response time: 9.30 seconds = 0 minutes 9.30 seconds)
+Q: Name of the Immigration Commissioner and Contact Details
+
+A: **Name:** Ms. I.B. Rani  
+**Contact Details:**  
+- **Office Address:** 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi – 110029, India  
+- **Telephone No:** 011-26102622  
+- **Email/Other Contact Methods:** Not provided in the given context
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.6987
+  - PDF: FRROCHAT_RAG_FACTS | Page: 2 | Type: pymupdf | Score: 0.6889
+  - PDF: FRROCHAT_RAG_FACTS | Page: 2 | Type: pymupdf | Score: 0.6840
+
+======================================================================
+[2026-07-02 14:19:19] (response time: 34.17 seconds = 0 minutes 34.17 seconds)
+Q: What does page 1 say?
+
+A: This page provides detailed information about the Bureau of Immigration (BoI) in India. Here are the key points:
+
+- **Establishment**: The BoI was established in 1971.
+- **Primary Functions**:
+  - Enforces rules regarding entry, stay, and exit of foreign nationals.
+  - Acts as the authentic gateway for travel regulations and immigration services.
+- **Leadership**:
+  - Headed by the Commissioner of Immigration.
+- **Contact Details**:
+  - Name: Ms. I.B. Rani, IPS
+  - Address: 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029
+  - Telephone No: 011-26102622 (Telefax)
+- **Management**:
+  - Oversees immigration services across India’s International Check Posts (ICPs) through FRROs and CHIOs.
+- **Services Provided for Foreign Nationals**:
+  - Oversees registration services and visa-related formalities for foreign nationals residing in India, ensuring compliance with relevant Acts, Rules, and Regulations.
+- **Number of Immigration Check Posts**:
+  - There are currently 114 Immigration Check Posts across India, covering various routes including air, sea, land, rail, and river.
+
+There is no information provided about the number of ICPs currently operational in India.
+
+Sources:
+
+======================================================================
+[2026-07-02 14:44:48] (response time: 30.69 seconds = 0 minutes 30.69 seconds)
+Q: frro contact directory bangalore
+
+A: For **Bangalore**, the contact details are as follows:
+
+- **In-Charge:** Sh. Santosh Babu K, IPS
+- 📍 **Address:** 5th Floor, A Block, TTMC, BMTC Bus Stand Building, 
+K.H. Road, Shantinagar, Bangalore - 560027
+- 📞 **Phone:** 080-22218195, 080-22218183, 080-22218110, 
+080-22218196 (Fax)
+- ✉️ **Email:** frroblr-ka@nic.in; ad-frroblr@mha.gov.in (OCI/PIO Enquiries)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5850
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5832
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5687
+
+======================================================================
+[2026-07-02 14:46:00] (response time: 5.00 seconds = 0 minutes 5.00 seconds)
+Q: Immigration Officer details of Coimbatore Airport
+
+A: I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 3 | Type: pymupdf | Score: 0.5771
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.5539
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.5536
+
+======================================================================
+[2026-07-02 14:46:43] (response time: 12.35 seconds = 0 minutes 12.35 seconds)
+Q: FRRO Chennai Contact details please
+
+A: **Chennai**
+- **In-Charge:** Sh. P. Ve Arunshakthikumar, IPS
+- 📍 **Address:** Shastri Bhawan Annexe, Building No. 26 Haddows Road, Nungabakkam, Chennai - 600006
+- 📞 **Phone:** 044-28251721, 044-23454971 (Fax), 044-29510706 (OCI queries)
+- ✉️ **Email:** chiochn@nic.in; frrochn@nic.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.6147
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.6123
+  - PDF: QA_for_Bot_Final | Page: 75 | Type: directory_entry | Score: 0.6100
+
+======================================================================
+[2026-07-02 14:47:22] (response time: 22.54 seconds = 0 minutes 22.54 seconds)
+Q: thats fine could you please guide me in obtaining OCI Card
+
+A: Sure, here’s a step-by-step guide to help you obtain your OCI (Overseas Citizenship of India) card:
+
+1. **Visit the Official Portal**: Start by visiting the official OCI Services website at [https://ociservices.gov.in](https://ociservices.gov.in). This is where you can submit your application online.
+
+2. **Submit Your Application Online**: Fill out the application form on their website, providing all necessary details and uploading required documents such as passport copy, proof of residence in India, etc.
+
+3. **Obtain a Police Clearance Certificate (PCC)**: If you are living in India, apply for a PCC through the official portal at [https://indianfrro.gov.in](https://indianfrro.gov.in). Ensure to indicate your purpose and submit via this platform.
+
+4. **Protected Area Permit (PAP) or Restricted Area Permit (RAP)**: After submitting your application, you might need to obtain a Protected Area Permit (PAP) or Restricted Area Permit (RAP) if you plan to visit any location designated as such by the Government of India.
+
+5. **Review and Submit**: Review all documents carefully before final submission. Ensure everything is in order and that you have obtained all necessary permits, including PAP/RAF if required.
+
+6. **Wait for Approval**: Once your application is submitted, it will be reviewed. You may need to provide additional information or documentation based on the review process.
+
+7.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 20 | Type: pymupdf | Score: 0.7053
+  - PDF: QA_for_Bot_Final | Page: 20 | Type: pymupdf | Score: 0.6772
+  - PDF: QA_for_Bot_Final | Page: 17 | Type: pymupdf | Score: 0.6765
+
+======================================================================
+[2026-07-02 14:50:37] (response time: 8.44 seconds = 0 minutes 8.44 seconds)
+Q: thats fine, is any stay period restricted for the OCI Card holders who visits India?
+
+A: Yes, there are no specific restrictions on the length of time an OCI card holder can stay in India. The validity and extension rules apply to the visa aspect rather than the duration of residence. However, it's important to note that foreigners registered as OCI cardholders are exempt from the requirement to register with jurisdictional FRROs, regardless of how long they stay in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.6949
+  - PDF: QA_for_Bot_Final | Page: 44 | Type: pymupdf | Score: 0.6882
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.6875
+
+======================================================================
+[2026-07-02 14:51:07] (response time: 10.33 seconds = 0 minutes 10.33 seconds)
+Q: share me the name of Commissioner of BoI and the contact details
+
+A: **Name:** Ms. I.B. Rani  
+**Contact Details:**  
+- **Office Address:** 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029  
+- **Telephone No:** 011-26102622 (Telefax)  
+- **Email:** frroblr-ka@nic.in; ad-frroblr@mha.gov.in (OCI/PIO Enquiries)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.6298
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5615
+  - PDF: FRROCHAT_RAG_FACTS | Page: 2 | Type: pymupdf | Score: 0.5369
+
+======================================================================
+[2026-07-02 14:51:16] (response time: 4.41 seconds = 0 minutes 4.41 seconds)
+Q: how to change my passport no in my OCI Card
+
+A: I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 18 | Type: pymupdf | Score: 0.6670
+  - PDF: QA_for_Bot_Final | Page: 18 | Type: pymupdf | Score: 0.6547
+  - PDF: QA_for_Bot_Final | Page: 18 | Type: pymupdf | Score: 0.6473
+
+======================================================================
+[2026-07-02 14:51:43] (response time: 15.52 seconds = 0 minutes 15.52 seconds)
+Q: how to extend my stay period in india after my visa expiration
+
+A: When extending your stay period in India after your visa expiration, you should apply for an extension through the **Foreigners Regional Registration Office (FRRO)** website at [https://indianfrro.gov.in](https://indianfrro.gov.in). 
+
+Here are the steps to follow:
+
+1. Ensure that your current visa is still valid.
+2. Submit your request while leaving enough time for processing.
+3. If your extension is not granted, you will need to apply and pay for a fresh Transit Visa.
+
+If you do not travel through India within the validity period of your Transit Visa, the visa will lapse, and you will need to apply for a new one. Transit Visas are generally not extendable. 
+
+It's highly recommended to apply well in advance to allow reasonable time for the FRRO/FRO to process your request. If permission to extend stay is not granted within the validity of the current visa, you must depart from India immediately after it expires.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 15 | Type: pymupdf | Score: 0.7074
+  - PDF: QA_for_Bot_Final | Page: 41 | Type: pymupdf | Score: 0.7023
+  - PDF: QA_for_Bot_Final | Page: 63 | Type: pymupdf | Score: 0.6806
+
+======================================================================
+[2026-07-02 14:53:05] (response time: 7.25 seconds = 0 minutes 7.25 seconds)
+Q: poe Bengaluru Office
+
+A: **Bengaluru Office**
+• Location: RPO Building, 8th Block, 80 Feet Road, KHB Games Village, Koramangala, Bengaluru-560095.
+• Contact: poebengaluru@mea.gov.in
+• Jurisdiction: Karnataka and Goa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.7085
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5532
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.5313
+
+======================================================================
+[2026-07-02 15:26:41] (response time: 20.83 seconds = 0 minutes 20.83 seconds)
+Q: frro contact directory Trivandrum
+
+A: Sure, here is the contact information for the Trivandrum office based on the provided context:
+
+📍 **Address:** 5th Floor, NORKA Centre, Thycaud, Thiruvananthapuram-695014.
+
+📞 **Phone:** 
+- 0471-2336625
+
+📧 **Email:** poetvm2@mea.gov.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5468
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.5203
+  - PDF: QA_for_Bot_Final | Page: 73 | Type: directory_entry | Score: 0.5084
+
+======================================================================
+[2026-07-02 15:29:14] (response time: 63.00 seconds = 1 minutes 3.00 seconds)
+Q: frro contact directory Trivandrum
+
+A: 📍 **Address:** 5th Floor, NORKA Centre, Thycaud, Thiruvananthapuram-695014.
+
+📞 **Phone:** 0471-2336625
+
+📧 **Email:** poetvm2@mea.gov.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5468
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.5203
+  - PDF: QA_for_Bot_Final | Page: 73 | Type: directory_entry | Score: 0.5084
+
+======================================================================
+[2026-07-02 15:30:17] (response time: 17.74 seconds = 0 minutes 17.74 seconds)
+Q: frro contact directory Mumbai
+
+A: The provided context does not contain specific information about the **FRRO (Foreign Regional Registration Office) Contact Directory** for Mumbai. 
+
+Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.6434
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.6167
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.5793
+
+======================================================================
+[2026-07-02 15:41:07] (response time: 7.32 seconds = 0 minutes 7.32 seconds)
+Q: poe Bengaluru Office
+
+A: **Bengaluru Office**
+• Location: RPO Building, 8th Block, 80 Feet Road, KHB Games Village, Koramangala, Bengaluru-560095.
+• Contact: poebengaluru@mea.gov.in
+• Jurisdiction: Karnataka and Goa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.7085
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5532
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.5313
+
+======================================================================
+[2026-07-02 15:47:05] (response time: 10.15 seconds = 0 minutes 10.15 seconds)
+Q: What is an ETA
+
+A: **ETA** stands for Electronic Travel Authorization. It allows the bearer access into the issuing country (India). ETA is **NOT** eVisa. When the bearer of ETA is allowed entry into India by the Immigration Officer, it becomes eVisa. eVisa will be stamped on the Passport of the foreigner at the designated ICPs on production of valid ETA.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 77 | Type: directory_entry | Score: 0.5896
+  - PDF: QA_for_Bot_Final | Page: 78 | Type: pymupdf | Score: 0.4797
+  - PDF: aaa | Page: 3 | Type: pymupdf | Score: 0.3948
+
+======================================================================
+[2026-07-02 16:49:17] (response time: 43.75 seconds = 0 minutes 43.75 seconds)
+Q: Summarise this document
+
+A: This document provides information about the Bureau of Immigration (BoI), including its establishment year, primary functions, and details about Foreigners Regional Registration Offices (FRROs). There are 15 FRROs located across various cities such as Ahmedabad, Amritsar, Bangalore, Calicut, Chandigarh, Chennai, Cochin, Delhi, Guwahati, Hyderabad, Jaipur, Kolkata, Lucknow, Mumbai, and Trivandrum. The BoI is responsible for enforcing rules regarding the entry, stay, and exit of foreign nationals in India.
+
+The document also covers visa requirements, including how to obtain an Indian visa if you are in a Yellow Fever endemic country. It mentions that biometric information must be provided by foreigners before their visa or registration is granted. Additionally, it outlines different forms such as Passenger and Crew Manifest (Form V), Advance Passenger Information (API), and Passenger Name Record (PNR) used for travel data submission.
+
+The document also includes details about the General Declaration in Form VIII that every carrier must submit to the Immigration Officer at D-45 minutes before scheduled departure time. Lastly, it specifies which FRROs are responsible for controlling authority of specific Immigration Check Posts (ICPs).
+
+Sources:
+
+======================================================================
+[2026-07-02 16:50:11] (response time: 7.08 seconds = 0 minutes 7.08 seconds)
+Q: What are the main topics?
+
+A: This document covers several main topics related to the Bureau of Immigration (BoI):
+
+- Establishment and functions of BoI
+- Number and locations of Foreigners Regional Registration Offices (FRROs)
+- Number and location of Chief Immigration Officers
+- Requirements for departure from India, including health checks and vaccination certificates
+- Biometric information collection process
+- Submission deadlines for Advance Passenger Information (API)
+- General Declaration submission requirements
+- Controlling authorities for Immigration Check Posts (ICPs)
+
+Sources:
+
+======================================================================
+[2026-07-02 16:50:25] (response time: 0.00 seconds = 0 minutes 0.00 seconds)
+Q: List all tables found
+
+A: I couldn't find any tables in the uploaded PDF.
+
+Sources:
+
+======================================================================
+[2026-07-02 16:50:51] (response time: 20.96 seconds = 0 minutes 20.96 seconds)
+Q: What does page 1 say?
+
+A: This page provides details about the Bureau of Immigration (BoI) in India. Here are the key points:
+
+- **Establishment**: The BoI was established in 1971.
+- **Primary Functions**:
+  - Enforces rules regarding the entry, stay, and exit of foreign nationals.
+  - Acts as the authentic gateway for travel regulations and immigration services.
+- **Leadership**:
+  - Headed by the Commissioner of Immigration.
+- **Contact Information**:
+  - Name: Ms. I.B. Rani, IPS
+  - Address: 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029
+  - Telephone No: 011-26102622 (Telefax)
+- **Immigration Services**:
+  - Oversees registration services and visa-related formalities for foreign nationals residing in India.
+  - Ensures compliance with relevant Acts, Rules, and Regulations.
+- **Number of Immigration Check Posts (ICPs)**:
+  - There are currently 114 ICPs across India, covering various routes including air, sea, land, rail, and river.
+
+**Missing Information**: The number of ICPs is provided as a question.
+
+Sources:
+
+======================================================================
+[2026-07-02 16:51:36] (response time: 23.15 seconds = 0 minutes 23.15 seconds)
+Q: Authorities authorized to collect biometric information in India
+
+A: Authorities authorized to collect biometric information in India include:
+
+- **State authorities**
+- **Union Territory authorities**
+- **Immigration Officers**
+- **Security agencies designated by the Central Government**
+
+These entities are empowered under immigration regulations to capture biometric data of foreigners within India.
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.7732
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.7430
+  - PDF: QA_for_Bot_Final | Page: 4 | Type: pymupdf | Score: 0.7372
+
+======================================================================
+[2026-07-02 16:52:07] (response time: 10.88 seconds = 0 minutes 10.88 seconds)
+Q: What are the categories for Student Visas
+
+A: The categories for **Student Visas** (S) are categorized based on the level and type of study:
+
+• S-1: Higher education, exchange programs, and skill development in Ayush or Theological studies.
+• S-2: School-level education.
+• S-3: Studies in Yoga, Vedic culture, Indian music/dance, Buddhist studies, or Indian languages.
+• S-4: Research scholars, visiting faculty, and G-20 Talent Visa holders.
+• S-5: For individuals undertaking an Internship in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.7327
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6367
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6191
+
+======================================================================
+[2026-07-02 16:52:26] (response time: 8.96 seconds = 0 minutes 8.96 seconds)
+Q: whta are the visa types under student visa
+
+A: The categories for Student Visas (S) include:
+
+• **S-1**: Higher education, exchange programs, and skill development in Ayush or Theological studies.
+• **S-2**: School-level education.
+• **S-3**: Studies in Yoga, Vedic culture, Indian music/dance, Buddhist studies, or Indian languages.
+• **S-4**: Research scholars, visiting faculty, and G-20 Talent Visa holders.
+• **S-5**: For individuals undertaking an Internship in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5894
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.5875
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5552
+
+======================================================================
+[2026-07-02 16:53:04] (response time: 13.04 seconds = 0 minutes 13.04 seconds)
+Q: visa type for long term investORS
+
+A: Q: Is there a specific visa for long-term investors?
+
+A: Yes. Investors may apply for **PRS** (Permanent Residency Status), specifically designed for foreign investors looking for long-term stay options.
+
+---
+
+Q: What is a Long Term Visa (LTV), and who is eligible?
+
+A: Certain categories of nationals from Afghanistan, Bangladesh, and Pakistan living in India may be eligible for a **Long Term Visa (LTV)**. This provides extended residency benefits for eligible individuals.
+
+---
+
+Q: Where can I find the official guidelines for Long Term Visas (LTV)?
+
+A: Detailed instructions regarding the grant and extension of LTV facilities can be found in the Ministry of Home Affairs (MHA) documentation.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.7151
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.7058
+  - PDF: QA_for_Bot_Final | Page: 62 | Type: pymupdf | Score: 0.5843
+
+======================================================================
+[2026-07-02 16:54:26] (response time: 36.42 seconds = 0 minutes 36.42 seconds)
+Q: Summarise this document
+
+A: This document provides information about the Bureau of Immigration (BoI), including its establishment year, primary functions, and details on Foreigners Regional Registration Offices (FRROs). There are 15 FRROs located across various cities such as Ahmedabad, Amritsar, Bangalore, Calicut, Chandigarh, Chennai, Cochin, Delhi, Guwahati, Hyderabad, Jaipur, Kolkata, Lucknow, Mumbai, and Trivandrum. The BoI is responsible for enforcing rules regarding the entry, stay, and exit of foreign nationals.
+
+The document also covers visa requirements, including how to obtain an Indian visa if you are in a Yellow Fever endemic country. It mentions that biometric information must be provided by foreigners before their visa or registration can be granted. Additionally, it outlines different forms such as Passenger and Crew Manifest (Form V), Advance Passenger Information (API), and Passenger Name Record (PNR) used for travel data submission.
+
+The document also includes details on the General Declaration in Form VIII that every carrier must submit to the Immigration Officer at D-45 minutes before scheduled departure time. Lastly, it specifies which FRROs are responsible for controlling Immigration Check Posts (ICP) at different locations such as Ahmedabad and Lucknow.
+
+Sources:
+
+======================================================================
+[2026-07-02 16:55:00] (response time: 20.82 seconds = 0 minutes 20.82 seconds)
+Q: What does page 1 say?
+
+A: This page provides details about the Bureau of Immigration (BoI) in India. Here are the key points:
+
+- **Establishment**: The BoI was established in 1971.
+- **Primary Functions**:
+  - Enforces rules regarding entry, stay, and exit of foreign nationals.
+  - Acts as the authentic gateway for travel regulations and immigration services.
+- **Leadership**:
+  - Headed by the Commissioner of Immigration.
+- **Contact Information**:
+  - Name: Ms. I.B. Rani, IPS
+  - Address: 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029
+  - Telephone No: 011-26102622 (Telefax)
+- **Immigration Services**:
+  - Oversees registration services and visa-related formalities for foreign nationals residing in India.
+  - Ensures compliance with relevant Acts, Rules, and Regulations.
+- **Number of Immigration Check Posts (ICPs)**:
+  - There are currently 114 ICPs across India.
+
+These details cover the establishment, primary functions, leadership structure, contact information, services provided, and number of operational immigration check posts in India.
+
+Sources:
+
+======================================================================
+[2026-07-02 16:55:25] (response time: 0.00 seconds = 0 minutes 0.00 seconds)
+Q: List all tables found
+
+A: I couldn't find any tables in the uploaded PDF.
+
+Sources:
+
+======================================================================
+[2026-07-02 16:55:46] (response time: 14.94 seconds = 0 minutes 14.94 seconds)
+Q: What are the main topics?
+
+A: This document covers several main topics related to the Bureau of Immigration (BoI):
+
+- Establishment year of BoI: **1971**
+- Primary functions of BoI: Enforcing rules regarding foreign nationals' entry, stay, and exit in India.
+- Number and locations of Foreigners Regional Registration Offices (FRROs): 15 offices located in Ahmedabad, Amritsar, Bangalore, Calicut, Chandigarh, Chennai, Cochin, Delhi, Guwahati, Hyderabad, Jaipur, Kolkata, Lucknow, Mumbai, and Trivandrum.
+- Number of Chief Immigration Officers: 24
+- No mandatory health check for departure from India.
+- Vaccination advice for travelers in Yellow Fever endemic countries.
+- Biometric information collection process for foreigners entering India.
+- Submission timing for Advance Passenger Information (API).
+- General Declaration submission timeframes for flights and vessels.
+- Passport surrender requirements after becoming a foreign national.
+- Controlling authorities for Immigration Check Posts at Ahmedabad, Lucknow, and Amritsar.
+
+Sources:
+
+======================================================================
+[2026-07-02 16:56:30] (response time: 20.50 seconds = 0 minutes 20.50 seconds)
+Q: Authorities authorized to collect biometric information in India
+
+A: Authorities authorized to collect biometric information in India include:
+
+- **State authorities**
+- **Union Territory authorities**
+- **Immigration Officers**
+- **Security agencies designated by the Central Government**
+
+These entities are empowered under immigration regulations to capture biometric data of foreigners within India.
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.7732
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.7430
+  - PDF: QA_for_Bot_Final | Page: 4 | Type: pymupdf | Score: 0.7372
+
+======================================================================
+[2026-07-02 16:56:47] (response time: 10.97 seconds = 0 minutes 10.97 seconds)
+Q: What are the categories for Student Visas
+
+A: The categories for **Student Visas** (S) are categorized based on the level and type of study:
+
+• S-1: Higher education, exchange programs, and skill development in Ayush or Theological studies.
+• S-2: School-level education.
+• S-3: Studies in Yoga, Vedic culture, Indian music/dance, Buddhist studies, or Indian languages.
+• S-4: Research scholars, visiting faculty, and G-20 Talent Visa holders.
+• S-5: For individuals undertaking an Internship in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.7327
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6367
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6191
+
+======================================================================
+[2026-07-02 16:56:57] (response time: 8.86 seconds = 0 minutes 8.86 seconds)
+Q: whta are the visa types under student visa
+
+A: The categories for Student Visas (S) include:
+
+• **S-1**: Higher education, exchange programs, and skill development in Ayush or Theological studies.
+• **S-2**: School-level education.
+• **S-3**: Studies in Yoga, Vedic culture, Indian music/dance, Buddhist studies, or Indian languages.
+• **S-4**: Research scholars, visiting faculty, and G-20 Talent Visa holders.
+• **S-5**: For individuals undertaking an Internship in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5894
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.5875
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5552
+
+======================================================================
+[2026-07-02 16:57:14] (response time: 12.81 seconds = 0 minutes 12.81 seconds)
+Q: visa type for long term investORS
+
+A: Q: Is there a specific visa for long-term investors?
+
+A: Yes. Investors may apply for **PRS** (Permanent Residency Status), specifically designed for foreign investors looking for long-term stay options.
+
+---
+
+Q: What is a Long Term Visa (LTV), and who is eligible?
+
+A: Certain categories of nationals from Afghanistan, Bangladesh, and Pakistan living in India may be eligible for a **Long Term Visa (LTV)**. This provides extended residency benefits for eligible individuals.
+
+---
+
+Q: Where can I find the official guidelines for Long Term Visas (LTV)?
+
+A: Detailed instructions regarding the grant and extension of LTV facilities can be found in the Ministry of Home Affairs (MHA) documentation.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.7151
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.7058
+  - PDF: QA_for_Bot_Final | Page: 62 | Type: pymupdf | Score: 0.5843
+
+======================================================================
+[2026-07-02 16:57:59] (response time: 5.13 seconds = 0 minutes 5.13 seconds)
+Q: who is the controlling authority of coimbatore immigration
+
+A: The controlling authority for the Immigration Check Post at Coimbatore (Tamil Nadu) is **FRRO Chennai**.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.6201
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.6126
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.6098
+
+======================================================================
+[2026-07-02 16:58:28] (response time: 12.41 seconds = 0 minutes 12.41 seconds)
+Q: do i have to vaccinate to visit india
+
+A: Indian Missions typically require you to show a valid vaccination certificate before issuing a visa if you are departing from a Yellow Fever endemic country. Therefore, it is strongly advised that travelers receive the Yellow Fever vaccination and carry a valid certificate for their own safety and to meet the entry requirements of your destination country.
+
+For infants younger than six months, there is no requirement for a Yellow Fever vaccine as they are exempted by authorities in India. However, if you are not vaccinated and cannot produce a valid certificate, you will be placed in quarantine for up to 6 days upon arrival in India. This rule applies to everyone except infants under six months old.
+
+So, yes, it is required that you get the Yellow Fever vaccine before leaving India for a Yellow Fever endemic country.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 3 | Type: pymupdf | Score: 0.7020
+  - PDF: FRROCHAT_RAG_FACTS | Page: 5 | Type: pymupdf | Score: 0.6744
+  - PDF: QA_for_Bot_Final | Page: 2 | Type: pymupdf | Score: 0.6729
+
+======================================================================
+[2026-07-02 16:59:35] (response time: 14.19 seconds = 0 minutes 14.19 seconds)
+Q: Is Kenya a notified country for yellow fever
+
+A: Kenya is indeed considered a notified country for Yellow Fever. According to the information provided in the context:
+
+**Africa (30 Countries):**
+- Angola
+- Benin
+- Burkina Faso
+- Burundi
+- Cameroon
+- Central African Republic
+- Chad
+- Congo
+- Cote d'Ivoire
+- Democratic Republic of Congo
+- Equatorial Guinea
+- Ethiopia
+- Gabon
+- Gambia
+- Ghana
+- Guinea
+- Guinea Bissau
+- Kenya
+- Liberia
+- Mali
+- Mauritania
+- Niger
+- Nigeria
+- Rwanda
+- Senegal
+- Sierra Leone
+- Sudan
+- South Sudan
+- Togo
+- Uganda
+
+Kenya is listed as one of the 30 notified countries for Yellow Fever endemic regions under international health regulations.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 3 | Type: pymupdf | Score: 0.6907
+  - PDF: FRROCHAT_RAG_FACTS | Page: 6 | Type: pymupdf | Score: 0.6818
+  - PDF: FRROCHAT_RAG_FACTS | Page: 6 | Type: pymupdf | Score: 0.6732
+
+======================================================================
+[2026-07-02 16:59:58] (response time: 4.80 seconds = 0 minutes 4.80 seconds)
+Q: what is java?
+
+A: I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: 3 | Type: pymupdf | Score: 0.4352
+  - PDF: PageIndex_doc | Page: 6 | Type: pymupdf | Score: 0.4337
+  - PDF: PageIndex_doc | Page: 9 | Type: pymupdf | Score: 0.4216
+
+======================================================================
+[2026-07-02 17:00:13] (response time: 4.17 seconds = 0 minutes 4.17 seconds)
+Q: FRRO Bangalur
+
+A: **📍 **Address:** New Mangalore  
+**FNRO Bangalore:** New Mangalore.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.5409
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.4872
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.4770
+
+======================================================================
+[2026-07-02 17:00:35] (response time: 10.42 seconds = 0 minutes 10.42 seconds)
+Q: frro contact directory chennai
+
+A: 📍 **Address:** Shastri Bhawan Annexe, Building No. 26 Haddows Road, Nungabakkam, Chennai - 600006 📞 **Phone:** 044-28251721, 044-23454971 (Fax), 044-29510706 (OCI queries) ✉️ **Email:** chiochn@nic.in; frrochn@nic.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 75 | Type: directory_entry | Score: 0.5719
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5710
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5626
+
+======================================================================
+[2026-07-02 17:01:07] (response time: 12.06 seconds = 0 minutes 12.06 seconds)
+Q: eta
+
+A: For **ETA**, or Electronic Travel Authorization, it allows the bearer access into India. It is not an eVisa. When a traveler with an ETA is allowed entry by the Immigration Officer in India, their ETA becomes an eVisa. The eVisa will be stamped on the passport of the foreigner at designated ICPs (Immigration Control Points) upon production of a valid ETA.
+
+The **ETA Expiry Date** indicates the last date for which the bearer can access India with the authorization. On the other hand, the **Visa Expiry Date** specifies the last date for which a foreigner is permitted to stay in India under any stipulated conditions related to their visa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 77 | Type: directory_entry | Score: 0.5804
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5174
+  - PDF: FRROCHAT_RAG_FACTS | Page: 9 | Type: pymupdf | Score: 0.4915
+
+======================================================================
+[2026-07-02 17:01:23] (response time: 11.76 seconds = 0 minutes 11.76 seconds)
+Q: i'm a afghanisthan national i would like to start business in india what are the types of visa
+
+A: For starting a business in India, you should apply for a **Business Visa**. Here’s why:
+
+- You can establish or explore setting up an industrial or business venture.
+- Attend technical meetings, board meetings, or general discussions.
+- Provide business services support or professional consultations.
+- Participate in commercial sports events on contract (such as the IPL, ISL, or IBL), including acting as a coach.
+
+If you own the majority of shares in your company, you should enter India on a **Business Visa**. 
+
+For any changes to employers while already in India, you need an Employment Visa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 26 | Type: pymupdf | Score: 0.6384
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.6225
+  - PDF: QA_for_Bot_Final | Page: 38 | Type: pymupdf | Score: 0.6059
+
+======================================================================
+[2026-07-02 17:01:44] (response time: 8.62 seconds = 0 minutes 8.62 seconds)
+Q: RAG system architecture
+
+A: The **RAG** system architecture is designed with a scalable architecture that supports future expansion and advanced enterprise features. It combines semantic vector search using **FAISS** with local Large Language Models running through **Ollama**.
+
+Here are the core functionalities of the RAG system:
+
+- **PDF Upload**: Allows users to upload enterprise documents.
+- **PDF Parsing**: Extracts text from uploaded PDF files using **PyPDF**.
+
+This architecture enables direct answering of questions from uploaded PDF documents.
+
+Sources:
+  - PDF: PageIndex_doc | Page: 20 | Type: pymupdf | Score: 0.6125
+  - PDF: PageIndex_doc | Page: 4 | Type: pymupdf | Score: 0.5825
+  - PDF: PageIndex_doc | Page: 24 | Type: pymupdf | Score: 0.5780
+
+======================================================================
+[2026-07-02 17:02:19] (response time: 20.54 seconds = 0 minutes 20.54 seconds)
+Q: PDF QA Workflow
+
+A: The PDF QA workflow involves several steps in your system architecture:
+
+1. **Upload PDF**:
+   - Users upload a PDF file through an frontend form.
+- The uploaded PDF is sent to the `/upload_pdf` endpoint using a POST request.
+- The backend saves the file to disk and triggers the `process_pdfs()` function.
+
+2. **Ingestion Process**:
+   - The `ingest.py` script is called by the `/upload_pdf` endpoint.
+- It builds an FAISS index from the PDFs, which helps in efficient search operations later on.
+
+3. **Question Handling**:
+   - Users can then query the system for answers using a `/chat/query` endpoint.
+- The `app.py` receives this request and calls the `rag.py` script's `ask()` function.
+- This function runs through different pipelines including Direct QA, Exact Entry, Section, Vector, and LLM fallback.
+
+4. **QA Execution**:
+   - Depending on the type of query (e.g., Direct QA, Exact Entry), the system uses FAISS index to find relevant documents within the PDFs.
+- The `rag.py` script then processes these findings using a combination of AI techniques such as Natural Language Processing and Large Language Models.
+
+This workflow ensures that both the ingestion of PDF files and their subsequent querying are handled efficiently and effectively.
+
+Sources:
+  - PDF: PageIndex_doc | Page: 7 | Type: pymupdf | Score: 0.6280
+  - PDF: PageIndex_doc | Page: 9 | Type: pymupdf | Score: 0.5862
+  - PDF: PageIndex_doc | Page: 13 | Type: pymupdf | Score: 0.5829
+
+======================================================================
+[2026-07-02 17:02:31] (response time: 9.84 seconds = 0 minutes 9.84 seconds)
+Q: What is an ETA
+
+A: ETA stands for Electronic Travel Authorization. It allows the bearer access into the issuing country (India). ETA is not eVisa. When the bearer of ETA is allowed entry into India by the Immigration Officer, it becomes eVisa. eVisa will be stamped on the Passport of the foreigner at the designated ICPs on production of valid ETA.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 77 | Type: directory_entry | Score: 0.5896
+  - PDF: QA_for_Bot_Final | Page: 78 | Type: pymupdf | Score: 0.4797
+  - PDF: aaa | Page: 3 | Type: pymupdf | Score: 0.3948
+
+======================================================================
+[2026-07-02 17:03:12] (response time: 38.45 seconds = 0 minutes 38.45 seconds)
+Q: Summarise this document
+
+A: This document provides information about the Bureau of Immigration (BoI), including its establishment year, primary functions, and details about Foreigners Regional Registration Offices (FRROs). There are 15 FRROs located across various cities such as Ahmedabad, Amritsar, Bangalore, Calicut, Chandigarh, Chennai, Cochin, Delhi, Guwahati, Hyderabad, Jaipur, Kolkata, Lucknow, Mumbai, and Trivandrum. The BoI is responsible for enforcing rules regarding the entry, stay, and exit of foreign nationals in India.
+
+The document also covers visa requirements, including how to obtain an Indian visa if you are in a Yellow Fever endemic country. It mentions that biometric information must be provided by foreigners before their visa or registration is granted. Additionally, it outlines different forms such as Passenger and Crew Manifest (Form V), Advance Passenger Information (API), and Passenger Name Record (PNR) used for travel data submission.
+
+The document also includes details about the General Declaration in Form VIII that every carrier must submit to the Immigration Officer at D-45 minutes before scheduled departure time. Lastly, it specifies which FRROs are responsible for controlling authority of specific Immigration Check Posts (ICPs).
+
+Sources:
+
+======================================================================
+[2026-07-02 17:03:44] (response time: 27.63 seconds = 0 minutes 27.63 seconds)
+Q: yellow fever person allowed in india
+
+A: Yellow Fever travelers are generally not **allowed** entry into India if they do not produce a valid vaccination certificate. Here’s how the rules apply:
+
+1. **Passengers who visited or transited through Yellow Fever affected countries and fail to produce a valid certificate are subject to quarantine regulations in India.**
+   - This means that if someone has been in an area where Yellow Fever is prevalent but did not have a valid vaccine certificate, they will be quarantined for up to 6 days.
+
+2. **Vaccination advisory for travelers departing India to endemic countries:**
+   - The Government of India does not mandate health checks for passengers leaving for Yellow Fever endemic areas.
+- However, travelers are strongly advised to receive the vaccination and carry a valid certificate before arriving in India.
+
+3. **Yellow Fever certificate requirements enforced by authorities in India:**
+   - Infants below six months old are exempt from needing a Yellow Fever certificate upon entry into India.
+- For those older than six months, they must have a valid Yellow Fever Vaccination Certificate to enter India.
+
+4. **Quarantine requirement for passengers without a valid certificate:**
+   - Travelers arriving in India from Yellow Fever endemic areas without a valid vaccination certificate may be quarantined for up to 6 days.
+
+In summary, while some travelers might face quarantine due to lack of certificates, the primary concern is ensuring that those entering India are vaccinated and have proper documentation.
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 5 | Type: pymupdf | Score: 0.6716
+  - PDF: FRROCHAT_RAG_FACTS | Page: 5 | Type: pymupdf | Score: 0.6593
+  - PDF: FRROCHAT_RAG_FACTS | Page: 4 | Type: pymupdf | Score: 0.6525
+
+======================================================================
+[2026-07-02 17:04:11] (response time: 13.90 seconds = 0 minutes 13.90 seconds)
+Q: Technical specifications for biometric collection
+
+A: The technical specifications for biometric collection in India are defined and periodically updated by the Ministry of Home Affairs according to technical specifications prescribed by the Central Government.
+
+Here are some key points regarding the technical specifications:
+
+1. **Biometric Information Capture**: Biometric information under the immigration system is captured according to these technical specifications.
+2. **Authorized Entities**: Authorities empowered to capture biometric information include Immigration Officers, civil authorities, Registration Officers, Border Guarding Forces, Coast Guard, State authorities, Union Territory authorities, and security agencies designated by the Central Government.
+3. **Fingerprints for Fewer Fingers**: For individuals with fewer than ten fingers, only available fingerprints are captured.
+
+For the most current technical details, you can visit the Ministry of Home Affairs website at [www.mha.gov.in](http://www.mha.gov.in).
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 4 | Type: pymupdf | Score: 0.6091
+  - PDF: FRROCHAT_RAG_FACTS | Page: 9 | Type: pymupdf | Score: 0.6058
+  - PDF: FRROCHAT_RAG_FACTS | Page: 8 | Type: pymupdf | Score: 0.5307
+
+======================================================================
+[2026-07-02 17:08:43] (response time: 8.96 seconds = 0 minutes 8.96 seconds)
+Q: How many FRROs are there and in which cities
+
+A: There are **15** FRRO offices under BoI located in the following cities:
+
+- Ahmedabad
+- Amritsar
+- Bangalore
+- Calicut
+- Chandigarh
+- Chennai
+- Cochin
+- Delhi
+- Guwahati
+- Hyderabad
+- Jaipur
+- Kolkata
+- Lucknow
+- Mumbai
+- Trivandrum
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.6516
+  - PDF: QA_for_Bot_Final | Page: 2 | Type: pymupdf | Score: 0.6306
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.6250
+
+======================================================================
+[2026-07-02 17:09:11] (response time: 11.96 seconds = 0 minutes 11.96 seconds)
+Q: what are the document requirements for exit permit
+
+A: To obtain an Exit Permit, a foreigner is required under specific circumstances:
+
+- **If they were issued a One-Time Travel Document or Laissez-Passer**, as mentioned in the context provided. 
+
+For international adoptions under CARA guidelines:
+- **Foreign nationals adopting an Indian child** must obtain exit permits if the child's nationality changes.
+- If the child retains Indian nationality, both adoptive parents need to obtain exit permits.
+- If the child acquires a foreign nationality, only one parent is required to obtain an Exit Permit.
+
+Additionally, when leaving India for international travel:
+- **A valid Indian Passport** must be carried.
+- **A valid Visa for your destination country** must also be presented.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 55 | Type: pymupdf | Score: 0.6444
+  - PDF: QA_for_Bot_Final | Page: 64 | Type: pymupdf | Score: 0.6306
+  - PDF: QA_for_Bot_Final | Page: 45 | Type: pymupdf | Score: 0.6206
+
+======================================================================
+[2026-07-02 17:10:09] (response time: 6.46 seconds = 0 minutes 6.46 seconds)
+Q: what are the categories of business visa
+
+A: The Business Visa has two main sub-categories:
+
+• **B-1**: For general business activities, including maintenance and repair (MRO) of aircraft or ships.
+
+• **B-2**: For sports persons and coaches on contract with remuneration.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 11 | Type: pymupdf | Score: 0.6213
+  - PDF: QA_for_Bot_Final | Page: 14 | Type: pymupdf | Score: 0.6185
+  - PDF: QA_for_Bot_Final | Page: 26 | Type: pymupdf | Score: 0.6066
+
+======================================================================
+[2026-07-02 17:10:28] (response time: 9.58 seconds = 0 minutes 9.58 seconds)
+Q: Is registration required with FRRO if i have a tourist visa to india
+
+A: A: If you hold a **Tourist Visa** in India, and your visa is valid for more than 180 days, then yes, you are required to register with the Foreigner’s Regional Registration Office (FRRO). This registration must be completed within 14 days of your arrival. For other visa categories or if your visa validity does not exceed 180 days, registration requirements may vary and should be checked based on specific endorsements on your visa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.7370
+  - PDF: QA_for_Bot_Final | Page: 30 | Type: pymupdf | Score: 0.7235
+  - PDF: QA_for_Bot_Final | Page: 29 | Type: pymupdf | Score: 0.7165
+
+======================================================================
+[2026-07-02 17:10:48] (response time: 8.54 seconds = 0 minutes 8.54 seconds)
+Q: i have come to india for studies having obtained student visa, now i have got a job here shoul i have to change the visa type
+
+A: No, you do not need to change your visa type if you have obtained a Student Visa and are currently studying in India. Your current **Student Visa** is valid for your studies at an approved institution. If you intend to work while studying, you will need to apply for the appropriate Employment (E-3) Visa as per your role and compensation details.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 38 | Type: pymupdf | Score: 0.7098
+  - PDF: QA_for_Bot_Final | Page: 31 | Type: pymupdf | Score: 0.6908
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.6699
+
+======================================================================
+[2026-07-02 17:11:39] (response time: 2.85 seconds = 0 minutes 2.85 seconds)
+Q: thank you ...bye
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5717
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5539
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5404
+
+======================================================================
+[2026-07-02 17:11:53] (response time: 7.82 seconds = 0 minutes 7.82 seconds)
+Q: is change of course and college allowed ?
+
+A: A change of institution is generally only allowed under specific circumstances, such as:
+
+• Insufficient infrastructure or facilities.
+• Unavailability of the chosen course.
+
+You must provide reasonable grounds to the authorities for such a request. 
+
+Therefore, a change of both college and university after arriving in India might not be directly allowed without specific reasons.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 32 | Type: pymupdf | Score: 0.6362
+  - PDF: QA_for_Bot_Final | Page: 67 | Type: pymupdf | Score: 0.5963
+  - PDF: QA_for_Bot_Final | Page: 32 | Type: pymupdf | Score: 0.5929
+
+======================================================================
+[2026-07-02 17:12:20] (response time: 7.13 seconds = 0 minutes 7.13 seconds)
+Q: what is the duration of tourist visa
+
+A: The maximum aggregate stay for a foreigner in a single calendar year (whether on a regular Tourist Visa, an e-Tourist Visa, or both) cannot exceed **180 days**. Additionally, you must adhere to the specific continuous stay stipulation.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 34 | Type: pymupdf | Score: 0.6980
+  - PDF: QA_for_Bot_Final | Page: 33 | Type: pymupdf | Score: 0.6702
+  - PDF: QA_for_Bot_Final | Page: 42 | Type: pymupdf | Score: 0.6504
+
+======================================================================
+[2026-07-02 17:12:40] (response time: 8.38 seconds = 0 minutes 8.38 seconds)
+Q: Can I leave my ship to catch a flight from a nearby airport
+
+A: Yes, you can leave your ship to catch a flight from a nearby airport with prior approval from the competent authority. You must hold a valid ticket for a scheduled air service and will only be allowed to leave the ship to proceed within that period. The visa becomes invalid if your stay exceeds 3 days, at which point you would need to apply for and pay for a fresh Transit Visa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 41 | Type: pymupdf | Score: 0.6763
+  - PDF: QA_for_Bot_Final | Page: 42 | Type: pymupdf | Score: 0.5698
+  - PDF: QA_for_Bot_Final | Page: 51 | Type: pymupdf | Score: 0.5680
+
+======================================================================
+[2026-07-02 17:13:54] (response time: 8.84 seconds = 0 minutes 8.84 seconds)
+Q: Name of the Immigration Commissioner and Contact Details
+
+A: **Name of the Immigration Commissioner:** Ms. I.B. Rani, IPS
+
+**Contact Details:**
+- **Office Address:** 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi – 110029, India
+- **Telephone No:** 011-26102622
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.6987
+  - PDF: FRROCHAT_RAG_FACTS | Page: 2 | Type: pymupdf | Score: 0.6889
+  - PDF: FRROCHAT_RAG_FACTS | Page: 2 | Type: pymupdf | Score: 0.6840
+
+======================================================================
+[2026-07-02 17:14:13] (response time: 12.33 seconds = 0 minutes 12.33 seconds)
+Q: frro contact directory bangalore
+
+A: **In-Charge:** Sh. Santosh Babu K, IPS  
+**Address:** 5th Floor, A Block, TTMC, BMTC Bus Stand Building,  
+K.H. Road, Shantinagar, Bangalore - 560027  
+**Phone:** 080-22218195, 080-22218183, 080-22218110, 080-22218196 (Fax)  
+**Email:** frroblr-ka@nic.in; ad-frroblr@mha.gov.in (OCI/PIO Enquiries)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5850
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5832
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.5687
+
+======================================================================
+[2026-07-02 17:14:41] (response time: 4.89 seconds = 0 minutes 4.89 seconds)
+Q: Immigration Officer details of Coimbatore Airport
+
+A: I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 3 | Type: pymupdf | Score: 0.5771
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.5539
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.5536
+
+======================================================================
+[2026-07-02 17:15:07] (response time: 12.93 seconds = 0 minutes 12.93 seconds)
+Q: FRRO Chennai Contact details please
+
+A: For **Chennai**, the contact details are as follows:
+
+- **In-Charge:** Sh. P. Ve Arunshakthikumar, IPS
+- 📍 **Address:** Shastri Bhawan Annexe, Building No. 26 Haddows Road, Nungabakkam, Chennai - 600006
+- 📞 **Phone:** 044-28251721, 044-23454971 (Fax), 044-29510706 (OCI queries)
+- ✉️ **Email:** chiochn@nic.in; frrochn@nic.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.6147
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.6123
+  - PDF: QA_for_Bot_Final | Page: 75 | Type: directory_entry | Score: 0.6100
+
+======================================================================
+[2026-07-02 17:15:46] (response time: 31.11 seconds = 0 minutes 31.11 seconds)
+Q: thats fine could you please guide me in obtaining OCI Card
+
+A: Sure, here’s a step-by-step guide to help you obtain your OCI (Ordinary Citizenship of India) card:
+
+1. **Visit the Official Portal**:
+   - Go to [https://ociservices.gov.in](https://ociservices.gov.in). This is where you can submit your application for registration as an OCI Cardholder.
+- Make sure to review the detailed information about specific documents required for your case on this portal.
+
+2. **Submit Your Application**:
+   - Fill out the online form with all necessary details and upload the required documents.
+- Ensure that all provided documents are valid and meet the requirements specified by the Government of India.
+
+3. **Obtain a Police Clearance Certificate (PCC)**:
+   - If you need a PCC, apply to the FRRO/FRO (First Information Report Officer/First Information Record Office) that covers your place of residence.
+- Apply via the official portal: [https://indianfrro.gov.in](https://indianfrro.gov.in).
+
+4. **Protected Area Permit**:
+   - OCI cardholders must obtain a Protected Area Permit (PAP) or Restricted Area Permit (RAP) to visit any location designated as such by the Government of India.
+- Check which areas you need access to and apply accordingly.
+
+5. **Eligibility for Children Born Through Certain Circumstances**:
+   - If your child was born through IVF, surrogacy, or live-in relationships, they are eligible for OCI registration.
+- These applications are reviewed on a case-to-case basis and may require additional documentation or specific approvals.
+
+6. **Professional and Personal Benefits of the OCI Card**:
+   - The OCI card provides several professional and personal benefits, such as visa-free entry into India and other privileges.
+- Review these benefits to understand how they can benefit you personally and professionally.
+
+By following these steps, you should be able to successfully apply for your OCI card. If you encounter any issues or need further assistance, don’t hesitate to reach out to the official portals or contact the relevant authorities directly.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 20 | Type: pymupdf | Score: 0.7053
+  - PDF: QA_for_Bot_Final | Page: 20 | Type: pymupdf | Score: 0.6772
+  - PDF: QA_for_Bot_Final | Page: 17 | Type: pymupdf | Score: 0.6765
+
+======================================================================
+[2026-07-02 17:16:04] (response time: 10.46 seconds = 0 minutes 10.46 seconds)
+Q: thats fine, is any stay period restricted for the OCI Card holders who visits India?
+
+A: Yes, there are restrictions on the length of stay for OCI cardholders while they are visiting India. However, these restrictions do not apply to all regions. Generally, foreigners are allowed to visit most parts of India without any specific stay period restriction. There are certain regions classified as Protected Areas or Restricted Areas where foreign visitors are not normally allowed to enter unless they have a compelling reason.
+
+For more precise information regarding the exact stay periods in different areas, it would be best to consult the official guidelines provided by the relevant authorities.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.6949
+  - PDF: QA_for_Bot_Final | Page: 44 | Type: pymupdf | Score: 0.6882
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.6875
+
+======================================================================
+[2026-07-02 17:16:29] (response time: 8.12 seconds = 0 minutes 8.12 seconds)
+Q: share me the name of Commissioner of BoI and the contact details
+
+A: **Name:** Ms. I.B. Rani  
+**Contact Details:**  
+- **Phone:** 011-26102622 (Telefax)  
+- **Email:** frroblr-ka@nic.in; ad-frroblr@mha.gov.in (OCI/PIO Enquiries)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.6298
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5615
+  - PDF: FRROCHAT_RAG_FACTS | Page: 2 | Type: pymupdf | Score: 0.5369
+
+======================================================================
+[2026-07-02 17:16:43] (response time: 4.44 seconds = 0 minutes 4.44 seconds)
+Q: how to change my passport no in my OCI Card
+
+A: I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 18 | Type: pymupdf | Score: 0.6670
+  - PDF: QA_for_Bot_Final | Page: 18 | Type: pymupdf | Score: 0.6547
+  - PDF: QA_for_Bot_Final | Page: 18 | Type: pymupdf | Score: 0.6473
+
+======================================================================
+[2026-07-02 17:17:05] (response time: 18.46 seconds = 0 minutes 18.46 seconds)
+Q: how to extend my stay period in india after my visa expiration
+
+A: To extend your stay period in India after your visa expiration, you should follow these steps:
+
+1. **Check Your Visa Validity**: Ensure that your current visa has expired or is about to expire soon.
+
+2. **Visit the FRRO Website**: Go to the [FRRO website at https://indianfrro.gov.in](). This is where you can apply for a visa extension if eligible.
+
+3. **Submit Your Application Early**: Apply well in advance of your current visa's expiration date. The FRRO/FRO needs reasonable time to process your request.
+
+4. **Ensure Compliance with Rules**: Make sure that all the required documents are ready and comply with the rules set by the Indian government for visa extensions.
+
+5. **Be Prepared for Possible Denial**: If your application is not granted, you will need to depart India immediately as per the guidelines provided in the FAQ section.
+
+6. **Plan Your Departure**: In case of a denied extension or conversion, plan your departure from India promptly after receiving notification about the denial.
+
+By following these steps, you can manage your stay period effectively and avoid any legal issues related to overstaying in India.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 15 | Type: pymupdf | Score: 0.7074
+  - PDF: QA_for_Bot_Final | Page: 41 | Type: pymupdf | Score: 0.7023
+  - PDF: QA_for_Bot_Final | Page: 63 | Type: pymupdf | Score: 0.6806
+
+======================================================================
+[2026-07-02 17:17:16] (response time: 2.94 seconds = 0 minutes 2.94 seconds)
+Q: last date of tender
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 44 | Type: pymupdf | Score: 0.5171
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.4942
+  - PDF: QA_for_Bot_Final | Page: 39 | Type: pymupdf | Score: 0.4587
+
+======================================================================
+[2026-07-02 17:17:25] (response time: 4.73 seconds = 0 minutes 4.73 seconds)
+Q: frro office in chennai
+
+A: There is **1** Foreigners Regional Registration Office (FRRO) located in Chennai.
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 3 | Type: pymupdf | Score: 0.5811
+  - PDF: QA_for_Bot_Final | Page: 2 | Type: pymupdf | Score: 0.5708
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.5622
+
+======================================================================
+[2026-07-02 17:17:53] (response time: 2.70 seconds = 0 minutes 2.70 seconds)
+Q: please give location
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.6272
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5854
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5619
+
+======================================================================
+[2026-07-02 17:18:17] (response time: 4.93 seconds = 0 minutes 4.93 seconds)
+Q: frro chennai directory location
+
+A: FRRO Chennai is located in **Chennai**.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.5185
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.4987
+  - PDF: QA_for_Bot_Final | Page: 2 | Type: pymupdf | Score: 0.4914
+
+======================================================================
+[2026-07-02 17:18:40] (response time: 12.61 seconds = 0 minutes 12.61 seconds)
+Q: who heads  BoI and the contact details
+
+A: The Bureau of Immigration (BoI) is headed by **Ms. I.B. Rani, IPS**.
+
+Here are her contact details:
+
+- **Address:**  
+  📍 **Address:** 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029
+
+- **Phone:**  
+  📞 **Phone:** 011-26102622 (Telefax)
+
+- **Email:**  
+  ✉️ **Email:** frroblr-ka@nic.in; ad-frroblr@mha.gov.in (OCI/PIO Enquiries)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.6430
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.5869
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5432
+
+======================================================================
+[2026-07-02 17:18:56] (response time: 7.39 seconds = 0 minutes 7.39 seconds)
+Q: poe Bengaluru Office
+
+A: **Bengaluru Office**
+• Location: RPO Building, 8th Block, 80 Feet Road, KHB Games Village, Koramangala, Bengaluru-560095.
+• Contact: poebengaluru@mea.gov.in
+• Jurisdiction: Karnataka and Goa.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.7085
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.5532
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.5313
+
+======================================================================
+[2026-07-02 17:19:37] (response time: 7.25 seconds = 0 minutes 7.25 seconds)
+Q: FRRO CONTACT DIRECTORY  Trivandrum
+
+A: 📍 **Address:** 5th Floor, NORKA Centre, Thycaud, Thiruvananthapuram-695014.
+
+📞 **Phone:** 0471-2336625
+
+📧 **Email:** poetvm2@mea.gov.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.6058
+  - PDF: QA_for_Bot_Final | Page: 73 | Type: directory_entry | Score: 0.5500
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.5465
+
+======================================================================
+[2026-07-02 17:20:15] (response time: 10.29 seconds = 0 minutes 10.29 seconds)
+Q: poe DIRECTORY Trivandrum
+
+A: **Directory: PoE Trivandrum Office**
+
+- 📍 **Address:** 5th Floor, NORKA Centre, Thycaud  
+- 📞 **Phone:** 0471-2336625  
+- ✉️ **Email:** poetvm2@mea.gov.in  
+- 🏫 **Jurisdiction:** Southern Kerala districts (Thiruvananthapuram, Kollam, Pathanamthitta, Kottayam, Idukki, Alappuzha)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.5535
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.4471
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.4377
+
+======================================================================
+[2026-07-02 17:20:38] (response time: 6.75 seconds = 0 minutes 6.75 seconds)
+Q: frro directory Trivandrum
+
+A: **FRRO Trivandrum:** The southern districts of Kerala, specifically Kollam, Pathanamthitta, and Thiruvananthapuram.
+
+---
+
+If you need more details or have other questions about FRRO Trivandrum, feel free to ask! 🌟
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.4767
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.4722
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.4704
+
+======================================================================
+[2026-07-02 18:28:26] (response time: 29.95 seconds = 0 minutes 29.95 seconds)
+Q: BOI of india
+
+A: The Bureau of Immigration (BoI) in India was established in **1971**. 
+
+Its primary functions include enforcing rules regarding the entry, stay, and exit of foreign nationals, acting as the authentic gateway for travel regulations and immigration services across India.
+
+The BoI is led by the **Commissioner of Immigration**, who oversees Immigration Check Posts (ICPs) through Foreigners Regional Registration Offices (FRROs) and Chief Immigration Officers (CHIOs).
+
+Services provided by the BoI for foreign nationals living in India include overseeing registration services and visa-related formalities, ensuring compliance with relevant Acts, Rules, and Regulations.
+
+Currently, there are **multiple** ICPs operational in India managed by the Bureau of Immigration. 
+
+For contact details of the Commissioner:
+- **Name:** Ms. I.B. Rani, IPS
+- **Office Address:** 7th Floor, Tower 'J', World Trade Centre (WTC), Nauroji Nagar, New Delhi - 110029
+- **Telephone No:** 011-26102622 (Telefax)
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.5420
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.5395
+  - PDF: QA_for_Bot_Final | Page: 1 | Type: pymupdf | Score: 0.5029
+
+======================================================================
+[2026-07-02 18:29:21] (response time: 21.04 seconds = 0 minutes 21.04 seconds)
+Q: whom to contact chennai immegration
+
+A: To contact the Chennai Immigration office, you can reach out to **Sh. P. Ve Arunshakthikumar** as he is listed as the In-Charge for this office. Here are the details:
+
+- **Address:** Shastri Bhawan Annexe, Building No. 26 Haddows Road, Nungabakkam, Chennai - 600006
+- **Phone Numbers:**
+  - Main Office: 044-28251721
+  - Fax: 044-23454971 (for OCI queries)
+  - Additional Number for Queries: 044-29510706
+- **Email:** chiochn@nic.in; frrochn@nic.in
+
+Alternatively, you can also contact the Chennai Office through their official email or phone number provided by the Ministry of External Affairs (MEA):
+
+- **Contact Number:** 044-29862069
+- **Official Email:** poechennai1@mea.gov.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.6007
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.5740
+  - PDF: QA_for_Bot_Final | Page: 47 | Type: directory_entry | Score: 0.5729
+
+======================================================================
+[2026-07-02 18:29:46] (response time: 5.27 seconds = 0 minutes 5.27 seconds)
+Q: voder id is mandatory for immegration
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: FRROCHAT_RAG_FACTS | Page: 7 | Type: pymupdf | Score: 0.5266
+  - PDF: FRROCHAT_RAG_FACTS | Page: 7 | Type: pymupdf | Score: 0.5236
+  - PDF: QA_for_Bot_Final | Page: 70 | Type: pymupdf | Score: 0.5153
+
+======================================================================
+[2026-07-02 18:30:09] (response time: 8.48 seconds = 0 minutes 8.48 seconds)
+Q: what forms need to be submitted for foreiners visit to india
+
+A: For foreigners visiting India, the standard forms that need to be submitted include:
+
+• A copy of a long-duration visa (not a Tourist, Missionary, or Mountaineering visa) that has at least 3 months of validity remaining.
+• Your Registration Certificate (RC/RP) issued by the FRRO/FRO.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.6052
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.5707
+  - PDF: QA_for_Bot_Final | Page: 15 | Type: pymupdf | Score: 0.5589
+
+======================================================================
+[2026-07-03 12:29:39] (response time: 26.49 seconds = 0 minutes 26.49 seconds)
+Q: Summarise this document
+
+A: This document provides information about the Bureau of Immigration (BoI), including its establishment year, primary functions, and details on Foreigners Regional Registration Offices (FRROs). There are 15 FRROs located across various cities such as Ahmedabad, Amritsar, Bangalore, Calicut, Chandigarh, Chennai, Cochin, Delhi, Guwahati, Hyderabad, Jaipur, Kolkata, Lucknow, Mumbai, and Trivandrum. The BoI is responsible for enforcing rules regarding the entry, stay, and exit of foreign nationals.
+
+The document also covers visa requirements, including how to obtain an Indian visa if you are in a Yellow Fever endemic country. It mentions that biometric information must be provided by foreigners before their visa or registration can be granted. Additionally, it outlines different forms such as Passenger and Crew Manifest (Form V), Advance Passenger Information (API), and Passenger Name Record (PNR) used for travel data submission.
+
+The document also includes details on the General Declaration in Form VIII that every carrier must submit to the Immigration Officer at D-45 minutes before scheduled departure time. Lastly, it specifies which FRROs are responsible for controlling Immigration Check Posts (ICP) at different locations such as Ahmedabad and Lucknow.
+
+Sources:
+
+======================================================================
+[2026-07-03 12:56:36] (response time: 35.22 seconds = 0 minutes 35.22 seconds)
+Q: System Architecture
+
+A: The system architecture flow described in the context is as follows:
+
+1. **PDF** → **Text Extraction**
+2. **Chunking**
+3. **Embeddings**
+4. **FAISS DB**
+5. **Retrieval**
+6. **LLM**
+7. **Answer**
+
+This flow represents how documents are processed through various stages to generate an answer using a Language Model (LLM).
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5832
+  - PDF: PageIndex_doc | Page: 8 | Type: pymupdf | Score: 0.5647
+  - PDF: PageIndex_doc | Page: 23 | Type: pymupdf | Score: 0.5552
+
+======================================================================
+[2026-07-03 12:57:24] (response time: 19.26 seconds = 0 minutes 19.26 seconds)
+Q: Technologies & Tools Used
+
+A: The technologies and tools used in the projects are as follows:
+
+- **Python**: Used for backend development and AI integration.
+- **Flask**: Utilized to create web APIs and chatbot interfaces.
+- **FAISS**: Employed for vector similarity search database operations.
+- **Ollama**: Implemented for running local Large Language Model (LLM) models offline.
+- **nomic-embed-text**: Applied as a semantic embedding model.
+
+For the second set of technologies:
+
+- **Python**: Used as the core backend language.
+- **Flask**: Employed to create web frameworks and API servers.
+- **FAISS**: Utilized for high-speed vector similarity search functionalities.
+- **Ollama**: Implemented for local inference of Large Language Models (LLMs).
+- The entry for **nomic-em** is incomplete.
+
+For the third set:
+
+- **Structured Logging**: Used for JSON-formatted logs that are machine-parsable.
+- **ELK Stack**: Employed for centralized log aggregation and search capabilities.
+- **Prometheus**: Utilized to collect metrics such as latency and error rates.
+- **Grafana**: Applied for creating visual dashboards for real-time monitoring.
+- **Request Tracing**: Implemented to track end-to-end query IDs.
+
+Sources:
+  - PDF: PageIndex_Project_Designed | Page: ? | Type: docling_table | Score: 0.5367
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5362
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5354
