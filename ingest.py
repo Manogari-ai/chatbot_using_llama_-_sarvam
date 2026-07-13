@@ -67,12 +67,14 @@ def get_embed_model():
     if _embed_model is None:
         with _singleton_lock:
             if _embed_model is None:
-                from FlagEmbedding import FlagModel
-                _embed_model = FlagModel(
-                    config.EMBED_MODEL,
-                    query_instruction_for_retrieval="Represent this sentence for searching relevant passages: ",
-                    use_fp16=True
-                )
+                # sentence-transformers, not FlagEmbedding — mxbai-embed
+                # isn't a BAAI model, so FlagModel (BAAI-specific) can't
+                # load it. Document-side embedding (this function, used
+                # by embed_texts below) needs NO instruction prefix for
+                # mxbai-embed-large-v1; only the query side does, which
+                # is handled separately in rag.py's _embed_query().
+                from sentence_transformers import SentenceTransformer
+                _embed_model = SentenceTransformer(config.EMBED_MODEL)
                 logger.info(f"Embedding model loaded: {config.EMBED_MODEL}")
     return _embed_model
 
@@ -245,7 +247,27 @@ def extract_tables_docling(pdf_path: str) -> List[Dict]:
                 if df is None or df.empty:
                     continue
                 md_table = df.to_markdown(index=False)
-                page_no  = getattr(table, "page_no", "?")
+
+                # FIX: page_no must ALWAYS be an int. This value gets
+                # stored in the same "page" field as every other chunk
+                # (which are always ints, from enumerate(doc, 1) etc.),
+                # and later code — e.g. rag.py's _overview_sample() —
+                # calls sorted() across all of a PDF's page numbers.
+                # The old code did `getattr(table, "page_no", "?")`,
+                # defaulting to the STRING "?" whenever Docling's table
+                # object didn't expose page_no. Mixing that string into
+                # an otherwise all-int list of pages made sorted() raise:
+                #   TypeError: '<' not supported between instances of
+                #   'str' and 'int'
+                # This coerces page_no to int defensively, falling back
+                # to 0 (rather than a string) if it's missing or not
+                # numeric, so downstream sorting/comparisons never break.
+                raw_page_no = getattr(table, "page_no", None)
+                try:
+                    page_no = int(raw_page_no)
+                except (TypeError, ValueError):
+                    page_no = 0
+
                 table_chunks.append({
                     "page":   page_no,
                     "text":   f"[TABLE {table_idx+1}]\n{md_table}",
@@ -410,9 +432,12 @@ def chunk_text(text: str, page: int, source: str,
 # ─── Embedding + FAISS ────────────────────────────────────────────────────────
 
 def embed_texts(texts: List[str]) -> np.ndarray:
-    """Embed texts in large batches; L2-normalise for cosine via IndexFlatIP."""
+    """Embed texts in large batches; L2-normalise for cosine via IndexFlatIP.
+    No instruction prefix on this (document) side — mxbai-embed-large-v1
+    only wants the retrieval instruction on the query side (see rag.py's
+    _embed_query), documents are embedded plain."""
     model      = get_embed_model()
-    embeddings = model.encode(texts, batch_size=64)   # 64 saturates faster than 32
+    embeddings = model.encode(texts, batch_size=64, convert_to_numpy=True)
     norms      = np.linalg.norm(embeddings, axis=1, keepdims=True)
     norms      = np.where(norms == 0, 1.0, norms)
     return (embeddings / norms).astype(np.float32)

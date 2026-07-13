@@ -4116,3 +4116,660 @@ Sources:
   - PDF: PageIndex_Project_Designed | Page: ? | Type: docling_table | Score: 0.5367
   - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5362
   - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5354
+
+======================================================================
+[2026-07-10 16:02:10] (response time: 27.99 seconds = 0 minutes 27.99 seconds)
+Q: html,css
+
+A: ✨ For handling **HTML** and **CSS**, the relevant information is found in both sections of the provided context. 
+
+- In the **PDF text extraction** section, there's no direct mention of HTML or CSS.
+- However, in the **LLM answer generation** section, you can find a connection to these technologies:
+  - The **HTML/CSS/JS** category indicates that HTML and CSS are used for frontend development.
+- Specifically, under **Frontend**, it mentions **templates/** which could be related to HTML templates or similar front-end resources.
+- Under **CSS**, there's no direct mention but the context is about frontend UI elements.
+
+So, while not explicitly stated, you can infer that HTML and CSS are used for frontend development in this setup. 📚💻
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.6271
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5757
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5679
+
+======================================================================
+[2026-07-10 16:03:45] (response time: 2.87 seconds = 0 minutes 2.87 seconds)
+Q: programming lanaguage ?
+
+A: Python **is** a programming language mentioned in the provided tables.
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5288
+  - PDF: PageIndex_Project_Designed | Page: ? | Type: docling_table | Score: 0.5255
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5216
+
+======================================================================
+[2026-07-10 16:07:32] (response time: 2.66 seconds = 0 minutes 2.66 seconds)
+Q: global warming
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5847
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5554
+  - PDF: QA_for_Bot_Final | Page: 12 | Type: pymupdf | Score: 0.5524
+
+======================================================================
+[2026-07-10 16:08:01] (response time: 13.95 seconds = 0 minutes 13.95 seconds)
+Q: form 3
+
+A: Qwen, it seems like you're looking for information about **Form III**. Here’s what I found based on the context provided:
+
+- Form III is a mandatory report that every "keeper of accommodation" must submit when a foreign national (including OCI cardholders) stays in their premises.
+- It's important to fill out and submit Form III within 7 days, especially if there are deaths or any other significant events involving foreign nationals.
+
+For more detailed guidance on how to register for and complete Form III, you can visit the official e-FRRO portal at [https://indianfrro.gov.in/frro/FormC](https://indianfrro.gov.in/frro/FormC). There, you will find a PDF guide that provides a step-by-step walkthrough.
+
+If you have any more questions or need further assistance with this form, feel free to ask! 📜
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 72 | Type: pymupdf | Score: 0.5701
+  - PDF: QA_for_Bot_Final | Page: 70 | Type: pymupdf | Score: 0.5645
+  - PDF: QA_for_Bot_Final | Page: 72 | Type: pymupdf | Score: 0.5219
+
+======================================================================
+[2026-07-10 16:08:53] (response time: 2.66 seconds = 0 minutes 2.66 seconds)
+Q: foam
+
+A: Hmm, I couldn't find that in the documents you've shared 🤔 — want to try rephrasing, or ask about something else?
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 50 | Type: pymupdf | Score: 0.5348
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5229
+  - PDF: QA_for_Bot_Final | Page: 19 | Type: pymupdf | Score: 0.4909
+
+======================================================================
+[2026-07-10 16:14:44] (response time: 26.01 seconds = 0 minutes 26.01 seconds)
+Q: architecture summary
+
+A: This document describes the **PageIndex RAG** system, an AI-powered Retrieval Augmented Generation platform designed to answer questions directly from uploaded PDF documents. The system integrates semantic vector search using FAISS with local Large Language Models through Ollama. 
+
+The architecture of the system involves several key steps: first, data is split into chunks; second, embeddings are generated using Ollama; third, these embeddings are stored in a FAISS database for efficient similarity searches. When a user asks a question, relevant chunks are retrieved from the database and used to extract an exact answer.
+
+Key features of this system include offline AI processing capabilities, support for PDF documents, fast semantic search, ability to provide precise answers, hybrid keyword and vector retrieval methods, low hallucination rates in responses, and localization. The document also mentions technologies such as Python for backend development and integration with Ollama for language model operations.
+
+This system aims to offer a robust solution for extracting accurate information from PDFs using advanced AI techniques.
+
+Sources:
+
+======================================================================
+[2026-07-10 16:19:08] (response time: 28.97 seconds = 0 minutes 28.97 seconds)
+Q: PageIndex RAG System
+
+A: PageIndex **RAG System** | Open Technology Group  
+NIC |---
+
+Project Overview 
+PageIndex RAG is an AI-powered Retrieval Augmented Generation system designed to answer questions directly from uploaded PDF documents. The system combines semantic vector search using FAISS with local Large Language Models running through Ollama.
+
+---
+
+System Architecture 
+ 
+PDF  
+Text Extraction 
+Chunking 
+Embeddings 
+FAISS DB 
+
+---
+
+Technologies & Tools Used 
+ 
+Technology / Tool 
+Purpose 
+Python 
+Backend development and AI integration 
+Flask 
+Web APIs and chatbot interface
+
+PageIndex **RAG System** | Open Technology Group  
+NIC |---
+
+19 CONCLUSION
+PageIndex RAG provides a fast and accurate AI document question-answering system using local embeddings, FAISS vector search, and lightweight LLMs. The system supports fully offline operation and delivers precise, validated answers from uploaded PDF documents.
+
+---
+
+Architecture Summary 
+ 
+Layer 
+Technology 
+Role 
+Ingestion 
+pdfplumber + Chunkers 
+Extract, clean, and split PDF content 
+Embedding 
+Ollama + nomic-embe
+
+Sources:
+  - PDF: PageIndex_doc | Page: 24 | Type: pymupdf | Score: 0.7827
+  - PDF: PageIndex_Project_Designed | Page: 2 | Type: pymupdf | Score: 0.7406
+  - PDF: PageIndex_doc | Page: 23 | Type: pymupdf | Score: 0.7184
+
+======================================================================
+[2026-07-10 16:20:30] (response time: 18.76 seconds = 0 minutes 18.76 seconds)
+Q: Technologies & Tools Used
+
+A: The technologies and tools used in the projects are as follows:
+
+- **Python**: Used for backend development and AI integration.
+- **Flask**: Utilized to create web APIs and chatbot interfaces.
+- **FAISS**: Employed for vector similarity search database operations.
+- **Ollama**: Implemented for running local Large Language Model (LLM) models offline.
+- **nomic-embed-text**: Applied as a semantic embedding model.
+
+For the second set of technologies:
+
+- **Python**: Used as the core backend language.
+- **Flask**: Employed to create web frameworks and API servers.
+- **FAISS**: Utilized for high-speed vector similarity search functionalities.
+- **Ollama**: Implemented for local inference of Large Language Models (LLMs).
+- The entry for **nomic-em** is incomplete.
+
+For the third set:
+
+- **Structured Logging**: Used for JSON-formatted logs that are machine-parsable.
+- **ELK Stack**: Employed for centralized log aggregation and search capabilities.
+- **Prometheus**: Utilized to collect metrics such as latency and error rates.
+- **Grafana**: Applied for creating visual dashboards for real-time monitoring.
+- **Request Tracing**: Implemented to track end-to-end query IDs.
+
+Sources:
+  - PDF: PageIndex_Project_Designed | Page: ? | Type: docling_table | Score: 0.5367
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5362
+  - PDF: PageIndex_doc | Page: ? | Type: docling_table | Score: 0.5354
+
+======================================================================
+[2026-07-10 18:07:51] (response time: 51.93 seconds = 0 minutes 51.93 seconds)
+Q: frro chennai
+
+A: 📍 **FRRO Chennai:** The controlling authority for the Immigration Check Post (ICP) at Chennai (Tamil Nadu) is FRRO Chennai. 
+
+Here are some key points to note:
+
+*   **Jurisdiction:** FRRO Chennai covers the city of Chennai and its surrounding areas, including Kattupalli.
+*   **Seaports:** Some major seaports under FRRO Chennai include:
+    *   Chennai Port
+    *   Kattupalli Port
+*   **Registration Requirements:** Foreigners entering India on a visa that requires registration must register with FRRO Chennai within 14 days of arrival.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.7208
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.7058
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.5582
+
+======================================================================
+[2026-07-13 10:40:25] (response time: 42.06 seconds = 0 minutes 42.06 seconds)
+Q: Summarise this document
+
+A: Let's break down the main points of this project 📄. 
+
+**Project Overview**
+The project is an Enterprise-grade PDF-based RAG (Retrieval-Augmented Generation) AI chatbot system developed using Python, Flask, FAISS Vector Database, and Ollama Local LLM.
+
+**Key Objectives**
+
+* Build a lightweight enterprise AI assistant
+* Achieve fast PDF-based search retrieval
+* Minimize hallucination issues
+* Support local offline AI execution
+* Create secure document intelligence platform
+* Provide accurate contextual answers
+
+These objectives are aimed at creating a robust and efficient system for answering questions from uploaded PDF documents.
+
+**Technology Stack**
+The technology stack includes:
+
+* **Python**: Core backend language
+* **Flask**: Web framework and API server
+* **FAISS**: High-speed vector similarity search
+* **Ollama**: Local LLM inference engine
+
+These technologies work together to enable fast and accurate search retrieval from PDF documents.
+
+**System Workflow**
+The complete end-to-end workflow involves:
+
+1. PDF ingestion
+2. Embedding conversion using **nomic-embed-text / mxbai-embed-large**
+3. Vector similarity search using FAISS
+4. Local LLM inference engine (Ollama) for response generation
+
+This workflow enables the system to answer questions directly from uploaded PDF documents.
+
+**Enterprise Architecture**
+The project implements a complete Retrieval-Augmented Generation (RAG) architecture, combining semantic vector search using FAISS with local Large Language Models running through Ollama.
+
+Sources:
+
+======================================================================
+[2026-07-13 10:42:08] (response time: 22.09 seconds = 0 minutes 22.09 seconds)
+Q: What are the main topics?
+
+A: Let's break down the main topics covered in this document. Here they are:
+
+* **Project Overview**: The project implements a complete Retrieval-Augmented Generation (RAG) architecture for answering questions directly from uploaded PDF documents.
+* **Objectives**: The primary goals of the project include building a lightweight enterprise AI assistant, achieving fast PDF-based search retrieval, minimizing hallucination issues, supporting local offline AI execution, creating a secure document intelligence platform, and providing accurate contextual answers.
+* **Technology Stack**: The technology stack includes Python as the core backend language, Flask as the web framework and API server, FAISS for high-speed vector similarity search, Ollama as the local LLM inference engine, and NumPy for vector processing.
+* **System Workflow**: The complete end-to-end workflow from PDF ingestion to AI answer delivery involves several steps, including:
+  1. PDF ingestion
+  2. Embedding conversion using nomic-embed-text / mxbai-embed-
+  3. Vector similarity search using FAISS
+  4. Local LLM inference engine (Ollama)
+  5. Response generation using a lightweight model
+* **Enterprise Architecture**: The document mentions the importance of enterprise architecture in implementing the RAG system, but it doesn't provide detailed information on this topic.
+
+These are the main topics covered in the document 📄
+
+Sources:
+
+======================================================================
+[2026-07-13 10:43:06] (response time: 0.00 seconds = 0 minutes 0.00 seconds)
+Q: List all tables found
+
+A: [TABLE 1]
+|   0 | 1                                |
+|----:|:---------------------------------|
+|  01 | Executive Summary                |
+|  02 | Project Overview                 |
+|  03 | Objectives                       |
+|  04 | Technology Stack                 |
+|  05 | System Workflow                  |
+|  06 | Enterprise Architecture          |
+|  07 | Module Explanation               |
+|  08 | RAG Pipeline Explanation         |
+|  09 | FAISS Vector Database Workflow   |
+|  10 | Ollama Integration
+
+|
+|  09 | FAISS Vector Database Workflow   |
+|  10 | Ollama Integration               |
+|  11 | API Flow Architecture            |
+|  12 | Security Architecture            |
+|  13 | Deployment Architecture          |
+|  14 | Monitoring and Logging           |
+|  15 | Performance Optimization         |
+|  16 | Folder Structure                 |
+|  17 | Future Enhancements              |
+|  18 | Final Output / Result Conclusion |
+|  19 | Conclusion                       |
+
+ion |
+|  19 | Conclusion                       |
+
+[TABLE 2]
+| Feature                | Description                            |
+|:-----------------------|:---------------------------------------|
+| PDF Upload             | Upload enterprise documents            |
+| PDF Parsing            | Extract text using PyPDF               |
+| Smart Chunking         | Split documents into meaningful chunks |
+| Embedding Generation   | Create vector embeddings using Ollama  |
+| FAISS Storage          | Store embeddings in vector database    |
+| Semantic Search        |
+
+e          | Store embeddings in vector database    |
+| Semantic Search        | Retrieve relevant chunks               |
+| Raw Search             | Exact phrase and keyword matching      |
+| AI Response Generation | Generate context-aware answers         |
+| Validation Layer       | Prevent invalid AI responses           |
+| REST API               | Flask API for frontend communication   |
+
+[TABLE 3]
+| Benefit                         | Impact                              |
+|:--------------------------------|:------------------------------------|
+| Faster Document Search          | Reduces research time significantly |
+| Reduced Manual Effort           | Automated document Q&A              |
+| Secure Local Processing         | No cloud data exposure              |
+| Enterprise Knowledge Automation | Scale AI across departments         |
+| Scalable AI Architecture        | Grows with organizatio
+
+departments         |
+| Scalable AI Architecture        | Grows with organizational needs     |
+
+[TABLE 4]
+| Technology                            | Purpose                               |
+|:--------------------------------------|:--------------------------------------|
+| Python                                | Core backend language                 |
+| Flask                                 | Web framework and API server          |
+| FAISS                                 | High-speed vector similarity search   |
+| Ollama                                | Local LLM inference engine            |
+| nomic-em
+
+| Local LLM inference engine            |
+| nomic-embed-text / mxbai-embed- large | Embedding model                       |
+| llama3.2:3b / Mistral                 | Lightweight response generation model |
+| NumPy                                 | Vector processing                     |
+| Requests                              | API communication                     |
+| PyPDF                                 | PDF text extraction                   |
+| HTML/CSS/JS
+
+| PDF text extraction                   |
+| HTML/CSS/JS                           | Frontend UI                           |
+
+[TABLE 5]
+| Module        | File       | Responsibility                                           |
+|:--------------|:-----------|:---------------------------------------------------------|
+| API Server    | app.py     | Flask REST API - upload and chat endpoints               |
+| PDF Ingestion | ingest.py  | PDF parsing, chunking, and embedding generation          |
+| RAG Engine    | rag.py     | Vector search, keyword search, and LLM answer generation |
+| Frontend      | templates/ | HTML/CSS/JS chat and
+
+and LLM answer generation |
+| Frontend      | templates/ | HTML/CSS/JS chat and upload UI                           |
+
+[TABLE 6]
+| Stage     | Step               | Description                                                       |
+|:----------|:-------------------|:------------------------------------------------------------------|
+| Ingestion | 1. Extract         | pdfplumber extracts raw text and tables from PDF pages            |
+| Ingestion | 2. Section Split   | Regex detects UPPERCASE headers to split document sections        |
+| Ingestion | 3. Chunk           | Q/A, numbered, bullet, and plain section chunkers run p
+
+n | 3. Chunk           | Q/A, numbered, bullet, and plain section chunkers run per section |
+| Ingestion | 4. Embed           | Ollama generates vector embeddings for each chunk                 |
+| Ingestion | 5. Index           | FAISS IndexFlatIP stores L2-normalised vectors                    |
+| Retrieval | 6. Query Embed     | User query is embedded using the same model                       |
+| Retrieval | 7. Vector Search   | Top-k nearest chunks retrieved by cosine similarity               |
+| Retri
+
+| Top-k nearest chunks retrieved by cosine similarity               |
+| Retrieval | 8. Keyword Boost   | Keyword-scored chunks added to candidate pool                     |
+| Answer    | 9. QA Extraction   | Regex extracts Q/A pair answers from candidate chunks             |
+| Answer    | 10. LLM Generation | Ollama LLM generates final answer from context window             |
+| Answer    | 11. Validation     | Not-found patterns rejected; hallucinations filtered              |
+
+rns rejected; hallucinations filtered              |
+
+[TABLE 7]
+| Phase       | Action                                                            |
+|:------------|:------------------------------------------------------------------|
+| Index Build | Convert each chunk to float32 embedding vector                    |
+| Index Build | L2-normalise all vectors (faiss.normalize_L2)                     |
+| Index Build | Add to IndexFlatIP (inner product = cosine on normalised vectors) |
+| Index Build | Persist as index.faiss + chunks.txt
+
+Index Build | Persist as index.faiss + chunks.txt                               |
+| Query       | Embed user query with same model                                  |
+| Query       | L2-normalise query vector                                         |
+| Query       | Search top-k by inner product similarity (≥ 0.25 threshold)       |
+| Query       | Merge vector results with keyword-scored candidates               |
+
+[TABLE 8]
+| Model             | Purpose                                  |
+|:------------------|:-----------------------------------------|
+| nomic-embed-text  | Semantic embedding for retrieval         |
+| mxbai-embed-large | Alternative high-quality embedding model |
+
+[TABLE 9]
+| Endpoint       |   Port | Purpose                                           |
+|:---------------|-------:|:--------------------------------------------------|
+| api/embeddings |  11434 | Generate vector embeddings for chunks and queries |
+| api/generate   |  11434 | Generate natural language answers from context    |
+
+[TABLE 10]
+| Model       | Purpose                                        |
+|:------------|:-----------------------------------------------|
+| llama3.2:3b | Generate AI responses (lightweight, fast)      |
+| Mistral     | Alternative fast local answer generation model |
+
+[TABLE 11]
+| Security Feature     | Purpose                                                |
+|:---------------------|:-------------------------------------------------------|
+| Local AI Execution   | Prevent cloud data leakage - all processing on-premise |
+| Context Validation   | Prevent hallucination - answers sourced from PDF only  |
+| Restricted Prompting | LLM instructed to avoid outside knowledge              |
+| Controlled Retrieval | Only PDF chunks used as context - no web lookups       |
+| API Iso
+
+d Retrieval | Only PDF chunks used as context - no web lookups       |
+| API Isolation        | Flask API runs on internal network port only           |
+
+[TABLE 12]
+| Component   | Recommended Spec                        |
+|:------------|:----------------------------------------|
+| RAM         | 16 GB+                                  |
+| CPU         | 8 Cores                                 |
+| GPU         | Optional (accelerates Ollama inference) |
+| Storage     | SSD (fast FAISS index load)             |
+| OS          | Linux / KaliLinux                       |
+
+[TABLE 13]
+| Tool               | Purpose                                    |
+|:-------------------|:-------------------------------------------|
+| Structured Logging | JSON-formatted logs for machine parsing    |
+| ELK Stack          | Centralized log aggregation and search     |
+| Prometheus         | Metrics collection (latency, error rate)   |
+| Grafana            | Visual dashboards for real-time monitoring |
+| Request Tracing    | End-to-end query trace IDs                 |
+
+cing    | End-to-end query trace IDs                 |
+
+Sources:
+
+======================================================================
+[2026-07-13 10:45:28] (response time: 16.34 seconds = 0 minutes 16.34 seconds)
+Q: What does page 1 say?
+
+A: Let's take a look at what we have here 📄. It seems like we've got two pages with some information about the **RAG System** and the **Open Technology Group (OTG)**.
+
+From what I can gather, the first page mentions that the **NIC** is associated with the **RAG System**, but it doesn't provide any further details 📍.
+
+The second page appears to be more focused on the **AI-Powered PDF Question Answering Platform**. It highlights some key features like being **Fast**, **Accurate**, and **Offline AI**. There's also a mention of an **AI Document Intelligence** system that uses **Python**, **Flask**, **FAISS**, and **Ollama**.
+
+Lastly, we've got the **Open Technology Group (OTG)** mentioned as part of this setup 👤. It seems to be connected with the **National Informatics Centre** 📍.
+
+That's a quick summary of what I found! If you'd like me to dig deeper or clarify anything, feel free to ask 😊.
+
+Sources:
+
+======================================================================
+[2026-07-13 10:51:52] (response time: 65.99 seconds = 1 minutes 5.99 seconds)
+Q: frro chennai
+
+A: 📍 **FRRO Chennai:** The controlling authority for the Immigration Check Post (ICP) at Chennai (Tamil Nadu) is FRRO Chennai. 
+
+Here are some key points to note:
+
+*   **Jurisdiction:** FRRO Chennai covers the city of Chennai and its surrounding areas, including Kattupalli.
+*   **Seaports:** Some major seaports under FRRO Chennai include:
+    *   Chennai Port
+    *   Kattupalli Port
+*   **Registration Requirements:** Foreigners entering India on a visa that requires registration must register with FRRO Chennai within 14 days of arrival.
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 10 | Type: pymupdf | Score: 0.7208
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.7057
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.5582
+
+======================================================================
+[2026-07-13 10:56:00] (response time: 47.41 seconds = 0 minutes 47.41 seconds)
+Q: Who decides whether the visa will be granted to a UNHCR 
+card holder
+
+A: 📍 **Decision Authority:** Each application is evaluated on a case-by-case basis by the jurisdictional **FRRO (Foreigners Regional Registration Office)**.
+
+Here's how it works:
+
+1. The applicant submits their application electronically through the official e-FRRO portal at **indianfrro.gov.in**.
+2. The FRRO will assess the documentation provided and determine the eligibility for the specific visa service requested.
+3. The decision authority is the jurisdictional FRRO, which means that each case is evaluated individually based on its merits.
+
+That's it! 📝
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 70 | Type: pymupdf | Score: 0.7280
+  - PDF: QA_for_Bot_Final | Page: 70 | Type: pymupdf | Score: 0.7114
+  - PDF: QA_for_Bot_Final | Page: 70 | Type: pymupdf | Score: 0.5915
+
+======================================================================
+[2026-07-13 10:59:19] (response time: 106.60 seconds = 1 minutes 46.60 seconds)
+Q: eta ?
+
+A: 🤔 It looks like you're asking about an **ETA**, which stands for Electronic Travel Authorization. An ETA is an electronic travel authorization that allows the bearer access into the issuing country (India). 📍
+
+Here are some key points to keep in mind:
+
+*   **ETA Expiry Date**: This is the last date allowing the bearer access into India.
+*   **Visa Expiry Date**: This is the last date permitted for the stay of a foreigner in India, subject to any stay stipulation applicable.
+
+If you're unsure about your ETA or have questions about your visa, I recommend checking out the FAQs provided by the In-Charge, Sh. Aravind Menon, IPS 📞 (0471-2573512) or sending an email to frrotvm@nic.in ✉️
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 78 | Type: pymupdf | Score: 0.5265
+  - PDF: QA_for_Bot_Final | Page: 77 | Type: directory_entry | Score: 0.5126
+  - PDF: PageIndex_updated | Page: 0 | Type: docling_table | Score: 0.5009
+
+======================================================================
+[2026-07-13 11:01:15] (response time: 49.25 seconds = 0 minutes 49.25 seconds)
+Q: frro contact directory chennai
+
+A: Let's get started on finding the FRRO contact directory for Chennai 📍.
+
+Here's what I found:
+
+**In-Charge:** 
+* **Name:** Sh. P. Ve Arunshakthikumar, IPS
+* **Contact Information:**
+  📞 **Phone:** 044-28251721, 044-23454971 (Fax), 044-29510706
+  ✉️ **Email:** chiochn@nic.in; frrochn@nic.in
+
+**FRRO Chennai:**
+
+* **Address:** Shastri Bhawan Annexe, Building No. 26 Haddows Road, Nungabakkam, Chennai - 600006
+* **Phone:** 044-28251721, 044-23454971 (Fax), 044-29510706
+
+It seems that FRRO Chennai is the controlling authority for the Immigration Check Post at Chennai (Tamil Nadu).
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.6161
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.6060
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.5541
+
+======================================================================
+[2026-07-13 11:04:53] (response time: 73.06 seconds = 1 minutes 13.06 seconds)
+Q: frro contact directory bangalore
+
+A: 📍 **FRRO Bangalore Contact Directory**
+
+Here's a summary of the key contacts for FRRO Bangalore:
+
+* **In-Charge:** Sh. Santosh Babu K, IPS
+* 📞 **Phone:** 080-22218195, 080-22218183, 080-22218110, 080-22218196 (Fax)
+* ✉️ **Email:** 
+  • frroblr-ka@nic.in
+  • ad-frroblr@mha.gov.in (OCI/PIO Enquiries)
+
+If you're looking for information on FRRO offices across India, here's a brief overview:
+
+1. There are currently **fifteen** FRRO offices located across the country.
+2. Each office is responsible for different States and Union Territories.
+
+Some additional details to note:
+
+* The controlling authority for the Immigration Check Post (ICP) at Bagdogra (West Bengal) is FRRO Kolkata.
+* The controlling authority for the Immigration Check Post (ICP) at Calicut (Kerala) is FRRO Calicut.
+* The controlling authority for the Immigration Check Post (ICP) at Chandigarh (Haryana) is FRRO Amritsar.
+
+Let me know if you have any further questions! 🤔
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 74 | Type: directory_entry | Score: 0.6802
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.6482
+  - PDF: QA_for_Bot_Final | Page: 8 | Type: pymupdf | Score: 0.5828
+
+======================================================================
+[2026-07-13 11:13:18] (response time: 47.32 seconds = 0 minutes 47.32 seconds)
+Q: frro contact directory Trivandrum
+
+A: Let's find out more about the FRRO office in Trivandrum 📍.
+
+Here's what I found:
+
+**FRRO Trivandrum**
+
+* **Jurisdiction:** The southern districts of Kerala, specifically Kollam, Pathanamthitta, and Thiruvananthapuram.
+* **Contact Information:**
+  * **Address:** Not specified in the documents shared 🤔
+  * **Phone:** Not specified in the documents shared 📞
+  * **Email:** Not specified in the documents shared ✉️
+
+Unfortunately, I couldn't find any additional information about the FRRO office in Trivandrum, such as its address or phone number. If you need more details, I can try to help you find them! 😊
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.5883
+  - PDF: QA_for_Bot_Final | Page: 59 | Type: pymupdf | Score: 0.5860
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.5715
+
+======================================================================
+[2026-07-13 11:22:37] (response time: 47.05 seconds = 0 minutes 47.05 seconds)
+Q: frro contact directory Mumbai
+
+A: 📍 **Address:** 
+• Annex-II Bldg., 3rd Floor, Badruddin Tayyabji Marg, 
+Behind St. Xavier's College, C.S.T, Mumbai - 400001 (beside Times of India building)
+
+📞 **Phone:** 
+• 022-22621169 (T)
+• 022-22620721 (Fax)
+• 022-22620446 (Visa Services)
+• 022-22621167 (PIO/OCI)
+
+✉️ **Email:** 
+• frromum@nic.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.6750
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.5938
+  - PDF: QA_for_Bot_Final | Page: 60 | Type: pymupdf | Score: 0.5893
+
+======================================================================
+[2026-07-13 11:24:09] (response time: 51.44 seconds = 0 minutes 51.44 seconds)
+Q: frro contact directory Mumbai incharge
+
+A: Let's get started on finding the contact details for FRRO Mumbai 📍 **Mumbai:** 
+
+Here are the key contacts for FRRO Mumbai:
+
+* In-Charge: **Ms. Niyati Thaker Dave, IPS** 
+* Address: **Annex-II Bldg., 3rd Floor, Badruddin Tayyabji Marg,**
+  **Behind St. Xavier's College, C.S.T, Mumbai - 400001 (beside Times of India building)**
+* Phone:
+  • **022-22621169** (T)
+  • **022-22620721** (Fax)
+  • **022-22620446** (Visa Services)
+  • **022-22621167** (PIO/OCI)
+* Email: **frromum@nic.in**
+
+These are the key contacts for FRRO Mumbai. If you need any further assistance, feel free to ask! 😊
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 76 | Type: directory_entry | Score: 0.6682
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.5540
+  - PDF: QA_for_Bot_Final | Page: 9 | Type: pymupdf | Score: 0.5313
+
+======================================================================
+[2026-07-13 11:28:26] (response time: 207.22 seconds = 3 minutes 27.22 seconds)
+Q: POE contact directory Guwahati Office
+
+A: Here is the answer:
+
+Guwahati
+o In-Charge: Sh. Inom Saikia
+o Address: LGBI Airport, Borjhar, Guwahati - 781015
+o Phone: 0361-2841466
+o Email: chioghy-asm@nic.in
+
+Sources:
+  - PDF: QA_for_Bot_Final | Page: 48 | Type: directory_entry | Score: 0.7113
+  - PDF: QA_for_Bot_Final | Page: 75 | Type: directory_entry | Score: 0.5288
+  - PDF: QA_for_Bot_Final | Page: 49 | Type: pymupdf | Score: 0.5152

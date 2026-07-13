@@ -1,3 +1,4 @@
+# rag
 
 
 import os
@@ -53,30 +54,38 @@ def set_cached_answer(query: str, result: Dict):
         }
 
 def get_embed_model():
+    """
+    mxbai-embed-large-v1 loads via sentence-transformers, not FlagEmbedding
+    (that library is BAAI-specific — it doesn't know this model's config).
+    No query_instruction_for_retrieval kwarg exists on SentenceTransformer,
+    so the query prompt is applied by hand in _embed_query() below instead
+    of at construction time.
+    """
     global _embed_model
     if _embed_model is None:
         with _model_lock:
             if _embed_model is None:
-                from FlagEmbedding import FlagModel
-                _embed_model = FlagModel(
-                    config.EMBED_MODEL,
-                    query_instruction_for_retrieval="Represent this sentence for searching relevant passages: ",
-                    use_fp16=True
-                )
+                from sentence_transformers import SentenceTransformer
+                _embed_model = SentenceTransformer(config.EMBED_MODEL)
                 logger.info(f"Embedding model ready: {config.EMBED_MODEL}")
     return _embed_model
 
 def get_reranker():
+    """
+    mxbai-rerank-large-v1 loads via sentence-transformers' CrossEncoder,
+    not FlagEmbedding's FlagReranker (BAAI-specific). Deliberately v1, not
+    v2 — mxbai-rerank-v2 is built on a Qwen (Alibaba) base model
+    internally, which would defeat the point of moving off BAAI's
+    reranker. v1 is a plain BERT-based cross-encoder.
+    """
     global _reranker
     if _reranker is None:
         with _model_lock:
             if _reranker is None:
-                from FlagEmbedding import FlagReranker
-                # bge-reranker-v2-m3 is ~4× faster than bge-reranker-large
-                # with nearly identical accuracy on retrieval tasks
+                from sentence_transformers import CrossEncoder
                 model_name = getattr(config, "RERANKER_MODEL",
-                                     "BAAI/bge-reranker-v2-m3")
-                _reranker = FlagReranker(model_name, use_fp16=True)
+                                     "mixedbread-ai/mxbai-rerank-large-v1")
+                _reranker = CrossEncoder(model_name)
                 logger.info(f"Re-ranker ready: {model_name}")
     return _reranker
 
@@ -103,6 +112,13 @@ def load_index():
 # Bumped cache size 256 → 512: cheap (a few KB per entry) and raises the hit
 # rate for repeated/near-repeated questions, skipping embedding entirely.
 
+# mxbai-embed-large-v1's recommended retrieval prompt — same wording BGE-M3
+# used, applied by hand here since SentenceTransformer has no constructor-
+# level instruction kwarg (FlagModel did). Document-side embedding
+# (ingest.py's embed_texts) intentionally does NOT get this prefix — only
+# queries do, same asymmetry as before.
+_QUERY_PROMPT = "Represent this sentence for searching relevant passages: "
+
 @lru_cache(maxsize=512)
 def _embed_query(query: str) -> bytes:
     """
@@ -110,7 +126,7 @@ def _embed_query(query: str) -> bytes:
     lru_cache requires hashable args; numpy arrays aren't, so we serialise.
     """
     model = get_embed_model()
-    q_raw = model.encode([query]).astype(np.float32)
+    q_raw = model.encode([_QUERY_PROMPT + query], convert_to_numpy=True).astype(np.float32)
     norm  = np.linalg.norm(q_raw, axis=1, keepdims=True)
     q_vec = q_raw / np.where(norm == 0, 1.0, norm)
     return q_vec.tobytes()          # serialise → hashable
@@ -304,6 +320,22 @@ def _page_chunks(pdf: str, page: int) -> List[Dict]:
 def _table_chunks(pdf: str) -> List[Dict]:
     return [c for c in _chunks if c.get("pdf") == pdf and c.get("source") == "docling_table"]
 
+def _page_sort_key(page):
+    """
+    Sort key that never blows up on mixed types. Chunk "page" values are
+    supposed to always be ints, but this is defensive: if any chunk in
+    chunks.json ever has a non-numeric page (e.g. an old index written
+    before the ingest.py page_no fix, or any future source that forgets
+    to set an int), sorted() would otherwise raise:
+        TypeError: '<' not supported between instances of 'str' and 'int'
+    Non-numeric values are coerced to a large sentinel int so they sort
+    last instead of crashing the whole summary/topics request.
+    """
+    try:
+        return int(page)
+    except (TypeError, ValueError):
+        return 10**9
+
 def _overview_sample(pdf: str, max_chars: int = 3500) -> str:
     """
     Builds a representative cross-section of the WHOLE document — one
@@ -313,13 +345,13 @@ def _overview_sample(pdf: str, max_chars: int = 3500) -> str:
     3 arbitrary paragraphs that happened to score highest against the
     literal word "summarize".
     """
-    by_page: Dict[int, Dict] = {}
+    by_page: Dict = {}
     for c in _chunks:
         if c.get("pdf") != pdf:
             continue
         by_page.setdefault(c.get("page", 0), c)   # first chunk seen per page
     pieces, total = [], 0
-    for page in sorted(by_page):
+    for page in sorted(by_page, key=_page_sort_key):
         text = by_page[page]["text"].strip()
         if not text:
             continue
@@ -456,9 +488,15 @@ def rerank(query: str, candidates: List[Dict],
         return candidates[:top_k]
 
     try:
-        reranker = get_reranker()
-        pairs    = [[query, c["text"]] for c in candidates]
-        scores   = reranker.compute_score(pairs, normalize=True)
+        reranker   = get_reranker()
+        pairs      = [[query, c["text"]] for c in candidates]
+        # CrossEncoder.predict() returns raw logits, unlike FlagReranker's
+        # compute_score(normalize=True) which gave 0-1 scores directly.
+        # Apply sigmoid by hand so rerank_score stays in the same 0-1
+        # range MIN_RELEVANCE_SCORE / _RERANK_SKIP_THRESHOLD expect —
+        # otherwise those thresholds would silently stop meaning anything.
+        raw_scores = reranker.predict(pairs)
+        scores     = 1.0 / (1.0 + np.exp(-np.asarray(raw_scores, dtype=np.float64)))
         for c, s in zip(candidates, scores):
             c["rerank_score"] = float(s)
         ranked = sorted(candidates, key=lambda x: x["rerank_score"], reverse=True)

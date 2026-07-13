@@ -24,14 +24,30 @@ CHAT_HISTORY_PATH = os.path.join(LOG_DIR, "chat_history.txt")
 CHUNK_SIZE    = 512          # characters
 CHUNK_OVERLAP = 80
 
-# Embedding model (BAAI/bge-m3)
-EMBED_MODEL   = "BAAI/bge-m3"
+# Embedding model
+# Swapped from BAAI/bge-m3 (Beijing Academy of AI / China) to mxbai-embed
+# -large-v1 (mixedbread ai / Germany). Same 1024-dim output, so nothing
+# downstream (FAISS index construction, EMBED_DIM) needs to change.
+# ⚠️ VECTOR SPACE CHANGE: embeddings from the old and new models are NOT
+# comparable. After this swap you MUST delete index/faiss.index and
+# chunks/chunks.json (or call ingest.delete_pdf_from_index() per PDF) and
+# re-ingest every PDF — otherwise old bge-m3 vectors and new mxbai vectors
+# sit in the same FAISS index and cosine similarity between them is
+# meaningless, which will silently degrade retrieval quality.
+# Loaded via sentence-transformers, not FlagEmbedding (BAAI-specific lib).
+EMBED_MODEL   = "mixedbread-ai/mxbai-embed-large-v1"
 EMBED_DIM     = 1024
 
 # Re-ranker model
-# v2-m3 is ~4x faster than -large with near-identical accuracy. Don't
-# switch back to -large — pure speed regression, no quality benefit.
-RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
+# Swapped from BAAI/bge-reranker-v2-m3 (China) to mxbai-rerank-large-v1
+# (mixedbread ai / Germany). Loaded via sentence-transformers' CrossEncoder,
+# not FlagEmbedding's FlagReranker — different library, see rag.py.
+# mxbai-rerank returns raw logits (not the 0-1 normalized scores
+# FlagReranker gave with normalize=True), so rag.py applies a sigmoid
+# before comparing against MIN_RELEVANCE_SCORE / _RERANK_SKIP_THRESHOLD.
+# Recalibrate those two against your own chat_history.txt after the
+# swap — the score distribution won't be identical to bge-reranker's.
+RERANKER_MODEL = "mixedbread-ai/mxbai-rerank-large-v1"
 
 # Retrieval
 # TOP_K_RERANK=1 was the cause of a prior quality drop ("Coimbatore"
@@ -42,7 +58,12 @@ TOP_K_RETRIEVE = 5          # initial FAISS hits
 TOP_K_RERANK   = 3          # after re-ranking — DO NOT reduce, causes missed answers
 
 # LLM
-OLLAMA_MODEL = "qwen2.5:3b"       # smaller/faster model
+# Swapped from qwen2.5:3b (Alibaba / China) to llama3.2:3b (Meta / US) —
+# same 3B parameter class, so speed is comparable and the OLLAMA_NUM_CTX /
+# OLLAMA_NUM_PREDICT tuning below (already dialed in for a 3B model on
+# this hardware) stays valid without retuning.
+# Pull it once before running: `ollama pull llama3.2:3b`
+OLLAMA_MODEL = "llama3.2:3b"       # non-Chinese, same size/speed class as qwen2.5:3b
 OLLAMA_URL   = "http://localhost:11434"
 
 # 3 chunks (≤512 chars each) + system prompt + question needs headroom.
@@ -84,8 +105,8 @@ DOC_META_NUM_PREDICT = 500
 # retrieved context is considered too weak to answer from — rag.answer()
 # and rag.answer_stream() return "I couldn't find that information in the
 # uploaded PDF." instead of calling the LLM at all. This is what stops a
-# smaller model (Qwen2.5:3B) from confidently generating an answer out of
-# irrelevant context instead of admitting it doesn't know.
+# smaller model (Llama 3.2 3B) from confidently generating an answer out
+# of irrelevant context instead of admitting it doesn't know.
 #
 # bge-reranker-v2-m3 normalized scores for a genuinely relevant top chunk
 # are typically well above 0.5; below ~0.3 the match is usually noise.
@@ -117,3 +138,5 @@ FASTPATH_THRESHOLD = 85
 # ==========================
 ANSWER_CACHE_SIZE = 100
 QUERY_CACHE_SIZE  = 500
+
+# rm -f index/faiss.index chunks/chunks.json             vetor table and chunking removed completely command
